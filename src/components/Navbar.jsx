@@ -1,0 +1,67 @@
+import { NavLink } from "react-router-dom";
+
+function Navbar() {
+  return (
+    <nav className="navbar navbar-expand-lg bg-body-tertiary fixed-top">
+      <div className="container d-flex align-items-center justify-content-between">
+        <div className="logo d-flex align-items-center">
+          <h3 className="ms-2 mb-0 mt-3">EventLinker</h3>
+        </div>
+
+        <button
+          className="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span className="navbar-toggler-icon"></span>
+        </button>
+
+        <div className="collapse navbar-collapse" id="navbarNav">
+          <ul className="navbar-nav mx-auto">
+            <li className="nav-item">
+              <NavLink to="/" className="nav-link">
+                Home
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink to="/events" className="nav-link">
+                Events
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink to="/volunteer" className="nav-link">
+                Volunteer
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink to="/contact" className="nav-link">
+                Contact Us
+              </NavLink>
+            </li>
+          </ul>
+
+          <div className="d-flex p-2">
+            <NavLink
+              to="/post"
+              className="btn btn-outline mx-2 rounded-5 d-flex align-items-center gap-2"
+            >
+              Post Your Event
+            </NavLink>
+            <NavLink
+              to="/profile"
+              className="btn btn-primary px-4 rounded-5 d-flex align-items-center gap-2"
+            >
+              <i className="fa-solid fa-user-group"></i> Profile
+            </NavLink>
+          </div>
+        </div>
+      </div>
+    </nav>
+  );
+}
+
+export default Navbar;
