@@ -8,6 +8,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import '../fontawesome-free-7.0.1-web/css/all.min.css';
 import "./css/Navbar.css";
 import "./css/Footer.css";
+import "./css/Home.css";
+
 
 
 
