@@ -4,8 +4,9 @@ function Navbar() {
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary fixed-top">
       <div className="container d-flex align-items-center justify-content-between">
-        <div className="logo d-flex align-items-center">
-          <h3 className="ms-2 mb-0 mt-3">EventLinker</h3>
+        <div className="logo d-flex">
+          <img src="../../public/img/9c5e0db0-ca21-47c4-b07a-4215d667ad16_62f9708f-375c-48ad-b0d7-4109d9248ce7_1406497_image.svg" alt="" />
+          <h3 className="ms-2">EventLinker</h3>
         </div>
 
         <button
