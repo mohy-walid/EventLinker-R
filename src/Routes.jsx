@@ -1,6 +1,7 @@
 import ContactPage from "./pages/Contact";
 import EventsPage from "./pages/Events";
 import HomePage from "./pages/Home";
+import PostEventPage from "./pages/Post";
 import VolunteerPage from "./pages/Volunteer";
 
 const routes = [
@@ -19,6 +20,10 @@ const routes = [
     {
         path:"/contact",
         element: <ContactPage/>
+    },
+    {
+        path:"/post",
+        element: <PostEventPage/>
     }
 ];
 export { routes };
