@@ -1,13 +1,27 @@
+/* Logo */
+.logo {
+  display: flex;
+  align-items: center; /* يحاذي الصورة و h3 عموديًا */
+}
+
 .logo img {
   width: 32px;
-  height: auto;
+  height: 32px;
 }
+
 .logo h3 {
-  margin: 0;
   font-family: 'Borel', cursive;
   font-size: 24px;
   font-weight: 700;
   color: #5048E5;
+  margin: 0; /* إزالة أي margin افتراضي */
+  line-height: 32px; /* يجعلها محاذية للصورة */
+}
+
+/* Navbar Links */
+.navbar-nav {
+  display: flex;
+  align-items: center; /* يحاذي كل اللينكات عموديًا */
 }
 
 .navbar-nav .nav-link {
@@ -15,8 +29,11 @@
   color: #171717;
   font-weight: 500;
   margin: 0 12px;
-  transition: color 0.3s ease;
   padding-bottom: 4px;
+  display: flex;
+  align-items: center; /* يحاذي النص والأيقونات داخل اللينك */
+  height: 40px; /* توحيد ارتفاع اللينكات */
+  transition: color 0.3s ease;
 }
 
 .navbar-nav .nav-link::after {
@@ -30,22 +47,27 @@
   transition: width 0.3s ease;
 }
 
-
 .navbar-nav .nav-link:hover {
   color: #5048E5;
 }
-
 
 .navbar-nav .nav-link:hover::after,
 .navbar-nav .nav-link.active::after {
   width: 100%;
 }
 
-
 .navbar-nav .nav-link.active {
   color: #5048E5;
   font-weight: 600;
 }
+
+/* Navbar container */
+.navbar .container {
+  display: flex;
+  align-items: center; /* يحاذي كل العناصر عموديًا */
+  justify-content: space-between;
+}
+
 
 /*---------------------------/*
 /* Buttons */
