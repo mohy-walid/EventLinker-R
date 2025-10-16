@@ -1,0 +1,101 @@
+body {
+  background-color: #f8f9fc;
+  font-family: "Roboto", sans-serif;
+  color: #333;
+  margin-top: 70px !important;
+}
+
+/* Gradient Heading */
+.gradient-title {
+  font-weight: 700;
+  font-size: 2.2rem;
+  background: linear-gradient(90deg, #3D38C4, #736efe);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  display: inline-block;
+}
+
+/* Contact Boxes */
+.contact-box {
+  border: 1px solid #e6e6f5;
+  transition: all 0.3s ease-in-out;
+  background-color: #fff;
+}
+
+.contact-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+/* Form Inputs */
+.form-control {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  padding: 0.65rem 0.9rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.form-control:focus {
+  border-color: #3D38C4;
+  box-shadow: 0 0 0 0.2rem rgba(61, 56, 196, 0.25);
+}
+
+.form-control::placeholder {
+  color: #aaa;
+}
+
+/* Gradient Button */
+.btn-gradient {
+  background: linear-gradient(90deg, #3D38C4, #736efe);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: all 0.3s ease-in-out;
+}
+
+.btn-gradient:hover {
+  background: linear-gradient(90deg, #2f2aa5, #6158e0);
+  transform: translateY(-2px);
+}
+
+/* Text Styles */
+.text-muted {
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+p.fw-medium {
+  color: #444;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .contact-box {
+    padding: 1.5rem;
+  }
+
+  .gradient-title {
+    font-size: 2.2rem;
+    background: linear-gradient(90deg, #4facfe, #3D38C4, #736efe, #4facfe);
+    background-size: 300%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientMove 6s ease infinite;
+  }
+
+  @keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+}
+
+.send-btn {
+  color: white !important;
+}
