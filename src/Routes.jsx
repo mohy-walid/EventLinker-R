@@ -1,5 +1,6 @@
 import EventsPage from "./pages/Events";
 import HomePage from "./pages/Home";
+import VolunteerPage from "./pages/Volunteer";
 
 const routes = [
     {
@@ -9,6 +10,10 @@ const routes = [
     {
         path:"/events",
         element: <EventsPage/>
+    },
+    {
+        path:"/volunteer",
+        element: <VolunteerPage/>
     }
 ];
 export { routes };
