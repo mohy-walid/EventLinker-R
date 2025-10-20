@@ -1,5 +1,6 @@
 body{
   margin-top: 100px !important;
+  background-color: whitesmoke !important;
 }
 .card{
     animation: motion 2s linear;
