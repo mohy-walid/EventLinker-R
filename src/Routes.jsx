@@ -3,11 +3,16 @@ import EventsPage from "./pages/Events";
 import HomePage from "./pages/Home";
 import PostEventPage from "./pages/Post";
 import ProfilePage from "./pages/Profile";
+import LoginPage from "./pages/Signin";
 import VolunteerPage from "./pages/Volunteer";
 
 const routes = [
     {
         path:"/",
+        element: <LoginPage/>
+    },
+    {
+        path:"/home",
         element: <HomePage/>
     },
     {
@@ -30,5 +35,6 @@ const routes = [
         path:"/profile",
         element: <ProfilePage/>
     }
+    
 ];
 export { routes };

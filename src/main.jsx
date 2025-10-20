@@ -9,8 +9,14 @@ import '../fontawesome-free-7.0.1-web/css/all.min.css';
 import "./css/Navbar.css";
 import "./css/Footer.css";
 import "./css/Home.css";
+import "./css/form.css";
 
 
+import { makeServer } from "./mirage/server.js";
+
+if (import.meta.env.DEV) {
+  makeServer();
+}
 
 
 createRoot(document.getElementById('root')).render(

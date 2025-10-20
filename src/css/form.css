@@ -2,3 +2,26 @@
 .log{
     height: 100vh;
 }
+
+.log-head{
+    height: 50px;
+    background-color: #5048E5;
+    line-height: 50px;
+    text-align: center;
+    color: white;
+    font-size: 30px;
+    font-weight: bolder;
+    
+}
+
+.log-body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.log-form {
+    width: 50%;
+}
+
