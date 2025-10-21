@@ -12,7 +12,7 @@ export default function ThreeBackground() {
       left: 0;
       width: 100vw;
       height: 100vh;
-      background: linear-gradient(135deg, #fdf7f3, #a9a7d3ff, #faeee5, #a9a3f9ff);
+      background: linear-gradient(135deg, #fdf7f3, #fff, #faeee5, #7d78bdff);
       background-size: 400% 400%;
       z-index: -1;
       animation: moveGradient 10s ease infinite;

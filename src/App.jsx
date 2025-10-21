@@ -1,8 +1,9 @@
-import { useRoutes, useLocation } from 'react-router-dom'
-import './App.css'
-import FooterLayout from './components/Footer'
-import NavbarLayout from './components/Navbar'
-import { routes } from './Routes'
+import { useRoutes, useLocation } from "react-router-dom";
+import "./App.css";
+import FooterLayout from "./components/Footer";
+import NavbarLayout from "./components/Navbar";
+import { routes } from "./Routes";
+import ThreeBackground from "./components/ThreeBackground";
 
 function App() {
   const element = useRoutes(routes);
@@ -15,11 +16,12 @@ function App() {
 
   return (
     <>
+      <ThreeBackground />
       {!hideLayout && <NavbarLayout />}
       {element}
       {<FooterLayout />}
     </>
-  )
+  );
 }
 
 export default App;

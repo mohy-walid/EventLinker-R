@@ -2,6 +2,9 @@
 .profile {
     margin-top: 80px;
     height: 100vh;
+    border: none;
+    box-shadow: inset 0px 0px 7px rgba(0, 0, 0, 0.15);
+    background: linear-gradient(180deg, #fff 0%, #d6cde6 50%, #745bc6 100%);
 }
 
 .profile-icon {
