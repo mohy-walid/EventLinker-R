@@ -1,1 +1,33 @@
 /*---------Dashboard----------*/
+.profile {
+    margin-top: 80px;
+    height: 100vh;
+}
+
+.profile-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 30px;
+}
+
+.over-box{
+height: 50px;
+}
+.over-btn {
+    background-color: #6C63FF;
+    padding: 4px 20px;
+    border-radius: 20px;
+}
+.over-btn button {
+    background-color:transparent;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    transition: all 0.6s ease;
+}
+
+.over-btn button:hover {
+    background-color:white;
+    color: black;
+
+}

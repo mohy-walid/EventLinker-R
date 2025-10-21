@@ -6,73 +6,50 @@ export function makeServer() {
       user: Model,
     },
 
-    // 🧩 بيانات افتراضية (seeds)
+    // بيانات افتراضية (seeds)
     seeds(server) {
       server.create("user", {
         id: 1,
-        name: "Yara",
-        email: "yara@email.com",
+        name: "Mohy",
+        email: "mohy@email.com",
         password: "1234",
         role: "superadmin",
       });
 
       server.create("user", {
         id: 2,
-        name: "Omar",
-        email: "omar@email.com",
+        name: "Walaa",
+        email: "walaa@email.com",
         password: "1234",
         role: "admin",
       });
 
       server.create("user", {
         id: 3,
-        name: "Laila",
-        email: "laila@email.com",
+        name: "Jana",
+        email: "jana@email.com",
         password: "1234",
         role: "organizer",
       });
 
       server.create("user", {
         id: 4,
-        name: "Mostafa",
-        email: "mostafa@email.com",
+        name: "Yara",
+        email: "yara@email.com",
         password: "1234",
         role: "user",
       });
     },
 
-    // ⚙️ تعريف الـ API routes
     routes() {
       this.namespace = "api";
 
-      // ✅ Middleware بسيط للتحقق من وجود token
-      this.get("/users", (schema, request) => {
-        const authHeader = request.requestHeaders.Authorization;
-
-        if (!authHeader) {
-          return new Response(
-            401,
-            {},
-            { success: false, error: "Unauthorized: No token provided" }
-          );
-        }
-
-        return schema.users.all();
-      });
-
-      // 🔐 تسجيل الدخول
+      // 🧠 LOGIN
       this.post("/login", (schema, request) => {
-        let email, password;
-
-        try {
-          // لو جاي JSON
-          ({ email, password } = JSON.parse(request.requestBody));
-        } catch {
-          // أو FormData
-          const params = new URLSearchParams(request.requestBody);
-          email = params.get("email");
-          password = params.get("password");
-        }
+        // هنا نفك الـ FormData اللي جاية من axios
+        const params = new URLSearchParams(request.requestBody);
+        const email = params.get("email");
+        const password = params.get("password");
 
         const user = schema.users.findBy({ email, password });
 
@@ -80,16 +57,14 @@ export function makeServer() {
           return new Response(
             401,
             {},
-            { success: false, error: "Invalid email or password" }
+            { success: false, error: "Invalid credentials" }
           );
         }
 
-        // توليد token وهمي
         const fakeToken = btoa(`${user.email}:${Date.now()}`);
 
         return {
           success: true,
-          message: `Welcome ${user.name}`,
           token: fakeToken,
           user: {
             id: user.id,
@@ -100,41 +75,64 @@ export function makeServer() {
         };
       });
 
-      // 📝 تسجيل مستخدم جديد
-      this.post("/register", (schema, request) => {
-        let data;
+      // 🧩 PROFILE DATA — مختلفة حسب الدور
+      this.get("/profile/:id", (schema, request) => {
+        const id = request.params.id;
+        const user = schema.users.find(id);
 
-        try {
-          data = JSON.parse(request.requestBody);
-        } catch {
-          const params = new URLSearchParams(request.requestBody);
-          data = Object.fromEntries(params.entries());
-        }
-
-        if (schema.users.findBy({ email: data.email })) {
+        if (!user) {
           return new Response(
-            400,
+            404,
             {},
-            { success: false, error: "Email already exists" }
+            { success: false, error: "User not found" }
           );
         }
 
-        const newUser = schema.users.create({
-          ...data,
-          role: data.role || "user",
-        });
-
-        const fakeToken = btoa(`${newUser.email}:${Date.now()}`);
-
-        return {
-          success: true,
-          message: "User created successfully",
-          token: fakeToken,
-          user: newUser,
+        let baseProfile = {
+          id: user.id,
+          name: user.name,
+          email: user.email,
+          role: user.role,
         };
+
+        let extraData = {};
+
+        switch (user.role) {
+          case "user":
+            extraData = {
+              bookedEvents: 12,
+              savedEvents: 8,
+              volunteerApplications: 3,
+            };
+            break;
+          case "organizer":
+            extraData = {
+              postedEvents: 5,
+              totalAttendees: 230,
+              feedbackReceived: 18,
+            };
+            break;
+          case "admin":
+            extraData = {
+              pendingPosts: 9,
+              usersToVerify: 4,
+              flaggedReports: 2,
+            };
+            break;
+          case "superadmin":
+            extraData = {
+              totalAdmins: 3,
+              totalUsers: 58,
+              systemHealth: "Good",
+            };
+            break;
+        }
+
+        return { success: true, profile: { ...baseProfile, ...extraData } };
       });
     },
   });
 
+  window.server = server;
   return server;
 }

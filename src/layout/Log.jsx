@@ -51,7 +51,7 @@ function LogLayout() {
     <div className="log-form">
       <Form noValidate validated={validated} onSubmit={handleSubmit}>
         <Form.Group controlId="validationCustom01" className="mb-4">
-          <Form.Label>email</Form.Label>
+          <Form.Label>Email :</Form.Label>
           <Form.Control
             required
             type="text"
@@ -66,7 +66,7 @@ function LogLayout() {
         </Form.Group>
 
         <Form.Group controlId="validationCustom02" className="mb-4">
-          <Form.Label>Password</Form.Label>
+          <Form.Label>Password :</Form.Label>
           <Form.Control
             required
             type="password"
@@ -80,7 +80,7 @@ function LogLayout() {
           </Form.Control.Feedback>
         </Form.Group>
         <Button type="submit" variant="dark">
-          Login
+          Sign In
         </Button>
       </Form>
     </div>

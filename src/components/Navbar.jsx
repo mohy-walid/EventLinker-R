@@ -29,7 +29,7 @@ function Navbar() {
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav mx-auto">
             <li className="nav-item">
-              <NavLink to="/" className="nav-link">
+              <NavLink to="/home" className="nav-link">
                 Home
               </NavLink>
             </li>

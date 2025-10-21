@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import CheckLogin from "../utils/CheckLog";
+import ThreeBackground from "../components/ThreeBackground";
 
 function HomePage() {
   //هنا------------------------------------
@@ -16,6 +17,7 @@ function HomePage() {
     window.addEventListener("popstate", handleBack);
     return (
       <>
+      <ThreeBackground/>
         {/* ---------- Hero Section ---------- */}
         <header className="text-center text-white">
           <div className="container">
