@@ -3,7 +3,7 @@ const volunteerData = [
     title: "Park Cleanup Drive",
     org: "Green Earth Foundation",
     tags: ["Environment", "October 26, 2024", "Central Park"],
-    img: "/Event/img/card_1.PNG",
+    img: "public/img/1.png",
     description:
       "Join us for a community park cleanup to restore the beauty of our local green spaces. Gloves and bags will be provided. All ages welcome!",
   },
