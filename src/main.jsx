@@ -10,7 +10,6 @@ import "./css/Navbar.css";
 import "./css/Footer.css";
 import "./css/Home.css";
 import "./css/form.css";
-import "./css/Profile.css";
 
 
 import { makeServer } from "./mirage/server.js";
