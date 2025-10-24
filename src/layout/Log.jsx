@@ -1,4 +1,3 @@
-import axios from "axios";
 import { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
@@ -17,33 +16,39 @@ function LogLayout() {
     setPassword(event.target.value);
   };
 
-  const handleSubmit = async (event) => {
+  const signup = (event) => {
     event.preventDefault();
-    const form = event.currentTarget;
-    if (form.checkValidity() === false) {
-      event.stopPropagation();
-    } else {
-      const endPoint = "/api/login";
-      const formData = new FormData();
-      formData.append("email", email);
-      formData.append("password", password);
-      try {
-        const response = await axios.post(endPoint, formData, {
-          headers: {
-            name: "Yara",
-          },
-        });
-        localStorage.setItem("name", response.data?.user?.name);
-        localStorage.setItem("email", response.data?.user?.email);
-        localStorage.setItem("id", response.data?.user?.id);
-        localStorage.setItem("role", response.data?.user?.role);
-        localStorage.setItem("token", response.data?.token);
-        navigate("/home");
-      } catch (error) {
-        console.log(error);
-      }
-    }
+    navigate("/signup");
+  };
 
+  const handleSubmit = (event) => {
+  event.preventDefault();
+  const form = event.currentTarget;
+
+  if (form.checkValidity() === false) {
+    event.stopPropagation();
+  } else {
+    // Read all users from localStorage
+    const users = JSON.parse(localStorage.getItem("users")) || [];
+
+    // Check email exist
+    const foundUser = users.find((user) => user.email === email);
+
+    if (!foundUser) {
+      alert("Email not found, please Sign Up first");
+    } else if (foundUser.password !== password) {
+      alert("Wrong password, please try again");
+    } else {
+      // Successful login
+      localStorage.setItem("token", "dummy_token_123");
+      localStorage.setItem("name", foundUser.name);
+      localStorage.setItem("email", foundUser.email);
+      localStorage.setItem("id", foundUser.id);
+      localStorage.setItem("role", foundUser.role);
+
+      navigate("/home");
+    }
+  }
     setValidated(true);
   };
 
@@ -82,6 +87,12 @@ function LogLayout() {
         <Button type="submit" variant="dark">
           Sign In
         </Button>
+        <div className="signup d-flex mt-2">
+          <span className="me-2">Don't have account yet?</span>
+          <a href="#" className="text-decoration-none" onClick={signup}>
+            SignUp
+          </a>
+        </div>
       </Form>
     </div>
   );

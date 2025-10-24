@@ -4,12 +4,17 @@ import HomePage from "./pages/Home";
 import PostEventPage from "./pages/Post";
 import ProfilePage from "./pages/Profile";
 import LoginPage from "./pages/Signin";
+import SignupPage from "./pages/Signup";
 import VolunteerPage from "./pages/Volunteer";
 
 const routes = [
     {
         path:"/",
         element: <LoginPage/>
+    },
+    {
+        path:"/signup",
+        element: <SignupPage/>
     },
     {
         path:"/home",

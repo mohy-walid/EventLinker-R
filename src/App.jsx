@@ -10,7 +10,7 @@ function App() {
   const location = useLocation();
 
   // المسارات اللي مش عايزين فيها Navbar/Footer
-  const noLayoutRoutes = ["/"];
+  const noLayoutRoutes = ["/" , "/signup"];
 
   const hideLayout = noLayoutRoutes.includes(location.pathname);
 
