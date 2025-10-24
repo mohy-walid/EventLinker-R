@@ -5,7 +5,7 @@ const eventsData = [
     tags: ["Conference", "Oct 26, 9:00 AM", "Virtual - Online"],
     description:
       "Join leading experts and innovators for discussions on AI, blockchain, and sustainable tech. Network with",
-    img: "/Event/img/events_card_1.PNG",
+    img: "public/img/events_card_1.PNG",
     detailsLink: "/Event/html/details.html",
   },
   {
@@ -14,7 +14,7 @@ const eventsData = [
     tags: ["Festival", "Nov 10, 11:00 AM", "City Park Arena"],
     description:
       "Indulge in a delightful array of international cuisines, local delicacies, and gourmet treats.",
-    img: "/Event/img/events_card_2.PNG",
+    img: "public/img/events_card_2.PNG",
     detailsLink: "/Event/html/details.html",
   },
   {
@@ -23,7 +23,7 @@ const eventsData = [
     tags: ["Workshop", "Dec 05, 10:00 AM", "Convention Center"],
     description:
       "Learn the latest trends in SEO, social media, content creation, and analytics. Gain actionable insights",
-    img: "/Event/img/events_card_3.PNG",
+    img: "public/img/events_card_3.PNG",
     detailsLink: "/Event/html/details.html",
   },
   {
@@ -32,7 +32,7 @@ const eventsData = [
     tags: [" Retreat", " Jan 15, 8:00 AM", " Mountain Lodge Resort"],
     description:
       "Escape the daily grind and immerse yourself in a serene environment focused on personal well-being",
-    img: "/Event/img/events_card_4.PNG",
+    img: "public/img/events_card_4.PNG",
     detailsLink: "/Event/html/details.html",
   },
   {
@@ -41,7 +41,7 @@ const eventsData = [
     tags: ["Competition", " Feb 20, 2:00 PM", " Innovation Hub"],
     description:
       "Witness groundbreaking startups present their ideas to a panel of investors and entrepreneurs.",
-    img: "/Event/img/events_card_5.PNG",
+    img: "public/img/events_card_5.PNG",
     detailsLink: "/Event/html/details.html",
   },
   {
@@ -50,7 +50,7 @@ const eventsData = [
     tags: [" Exhibition", "Mar 08, 10:00 AM", " Grand Art Gallery"],
     description:
       "Explore diverse art forms, from contemporary paintings to traditional crafts. Enjoy live",
-    img: "/Event/img/events_card_6.PNG",
+    img: "public/img/events_card_6.PNG",
     detailsLink: "/Event/html/details.html",
   },
   {
@@ -59,7 +59,7 @@ const eventsData = [
     tags: [" Tournament", "  Apr 12, 6:00 PM", " Cyberdome Arena"],
     description:
       "Experience the thrill of competitive gaming as top teams battle it out for glory and prizes. Witness",
-    img: "/Event/img/events_card_7.PNG",
+    img: "public/img/events_card_7.PNG",
     detailsLink: "/Event/html/details.html",
   },
   {
@@ -68,7 +68,7 @@ const eventsData = [
     tags: [" Fair", " May 25, 10:00 AM", " Community Garden"],
     description:
       "Discover eco-friendly products, sustainable practices, and innovative solutions for conscious",
-    img: "/Event/img/events_card_8.PNG",
+    img: "public/img/events_card_8.PNG",
     detailsLink: "/Event/html/details.html",
   },
   {
@@ -77,7 +77,7 @@ const eventsData = [
     tags: [" Conference", " October 26,2024", "Convention Center"],
     description:
       "Connect with industry leaders, attend insightful keynotes, and explore cutting-edge solutions in AI, cybersecurity, and cloud computing.",
-    img: "/Event/img/events_card_9.PNG",
+    img: "public/img/events_card_9.PNG",
     detailsLink: "/Event/html/details.html",
   },
 ];
