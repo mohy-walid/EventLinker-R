@@ -11,7 +11,7 @@ const volunteerData = [
     title: "Youth Mentoring Program",
     org: "Future Leaders Hub",
     tags: ["Education", "November 10, 2024", "Community Center"],
-    img: "/Event/img/card_2.PNG",
+    img: "public/img/2.png",
     description:
       "Help guide young minds through our mentorship program. Share your knowledge and make a positive impact on a child's future.",
   },
@@ -19,7 +19,7 @@ const volunteerData = [
     title: "Homeless Shelter Support",
     org: "City Outreach Program",
     tags: ["Community", "December 01, 2024", "Downtown Shelter"],
-    img: "/Event/img/card_3.PNG",
+    img: "public/img/3.png",
     description:
       "Assist with meal preparation and distribution at the city's largest homeless shelter. Your help makes a difference.",
   },
@@ -27,7 +27,7 @@ const volunteerData = [
     title: "Elderly Companion Service",
     org: "Golden Years Alliance",
     tags: ["Healthcare", "Ongoing", "Various Homes"],
-    img: "/Event/img/card_4.PNG",
+    img: "public/img/4.png",
     description:
       "Provide companionship and support to seniors in their homes, offering a friendly face and a helping hand with daily tasks.",
   },
@@ -35,7 +35,7 @@ const volunteerData = [
     title: "Animal Shelter Assistant",
     org: "Paws & Claws Rescue",
     tags: ["Animals", "November 15, 2024", "Local Animal Shelter"],
-    img: "/Event/img/card_5.PNG",
+    img: "public/img/5.png",
     description:
       "Spend time with our furry friends! Help with feeding, cleaning, and providing love to animals awaiting adoption.",
   },
@@ -43,7 +43,7 @@ const volunteerData = [
     title: "Coastal Conservation Project",
     org: "Ocean Guardians",
     tags: ["Environmental", "January 20, 2025", "North Beach"],
-    img: "/Event/img/card_6.PNG",
+    img: "public/img/6.png",
     description:
       "Join us in protecting our marine ecosystems. Participate in our monthly beach cleanup and contribute to a healthier ocean.",
   },
