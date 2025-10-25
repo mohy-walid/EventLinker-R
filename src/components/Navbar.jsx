@@ -3,7 +3,6 @@ import { NavLink, useNavigate } from "react-router-dom";
 function Navbar() {
   const navigate = useNavigate()
   const logOut =()=>{
-    localStorage.clear();
     navigate("/");
   };
   return (
