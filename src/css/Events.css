@@ -1,0 +1,71 @@
+body{
+  margin-top: 100px !important;
+}
+
+.card{
+    animation: motion 2s linear;
+}
+
+
+.card:hover{
+    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.3);
+    transform:scale(1.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.filtration{
+    animation:move 2s linear;
+}
+
+@keyframes motion{
+    0%{
+        transform: scale(0.5);
+        opacity:0;
+    }
+    100%{
+        opacity:2;
+    }
+}
+
+@keyframes move{
+    0%{
+        transform: translateY(100px);
+        opacity:0;
+    }
+    25%{
+        transform: translateY(75px);
+        opacity: 0.5;
+    }
+    50%{
+        transform: translateY(50px);
+        opacity: 0.7;
+    }
+    75%{
+        transform: translateY(25px);
+        opacity: 0.9;
+    }
+    100%{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@media (max-width: 768px) {
+  .filtration .form-control {
+    max-width: 100% !important;
+  }
+
+  .filtration .dropdown,
+  .filtration .btn {
+    flex: 1 1 100%; 
+  }
+}
+
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-body .d-flex.justify-content-end {
+    margin-top: auto;
+}

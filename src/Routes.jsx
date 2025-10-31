@@ -1,14 +1,29 @@
 import EventDetails from "./pages/details";
+import ContactPage from "./pages/Contact";
+import EventsPage from "./pages/Events";
 import HomePage from "./pages/Home";
+import VolunteerPage from "./pages/Volunteer";
 
 const routes = [
-    {
-        path:"/home",
-        element: <HomePage/>
-    },
-    {
-        path:"/details",
-        element: <EventDetails/>
-    }
+  {
+    path: "/home",
+    element: <HomePage />
+  },
+  {
+    path: "/details",
+    element: <EventDetails/>
+  },
+  {
+    path: "/events",
+    element: <EventsPage />
+  },
+  {
+    path: "/volunteer",
+    element: <VolunteerPage />
+  },
+  {
+    path: "/contact",
+    element: <ContactPage />
+  }
 ];
 export { routes };
