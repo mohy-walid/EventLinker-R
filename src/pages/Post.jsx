@@ -1,6 +1,6 @@
 const PostEventPage = () => {
   return (
-    <div className="flex-grow-1 d-flex align-items-center justify-content-center">
+    <div className="flex-grow-1 d-flex align-items-center justify-content-center pt-5">
       <div
         className="container bg-white shadow-lg rounded fade-in-up p-0"
         style={{ maxWidth: "900px" }}

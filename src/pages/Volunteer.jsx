@@ -187,7 +187,7 @@ const VolunteerPage = () => {
       <div className="row align-items-center justify-content-center m-2 p-2 g-5">
         {volunteerData.map((vol, index) => (
           <div key={index} className="col-12 col-sm-6 col-lg-4">
-            <div className="card h-100 w-100" style={{ borderRadius: "20px" }}>
+            <div className="card volunteer-card h-100 w-100" style={{ borderRadius: "20px" }}>
               <img
                 src={vol.img}
                 className="card-img-top img-fluid"

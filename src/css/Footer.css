@@ -6,3 +6,6 @@ footer i {
 footer i:hover {
   color: #d1d1ff;
 }
+footer {
+  background: linear-gradient(to top,#3f3b82 ,#6C63FF);
+}

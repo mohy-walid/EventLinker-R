@@ -13,9 +13,14 @@ import "./css/details.css";
 import "./css/Profile.css";
 import "./css/Events.css";
 import "./css/Volunteer.css";
+import "./css/form.css";
 
 
+import { makeServer } from "./mirage/server.js";
 
+if (import.meta.env.DEV) {
+  makeServer();
+}
 
 
 createRoot(document.getElementById('root')).render(

@@ -5,35 +5,45 @@ import HomePage from "./pages/Home";
 import PostEventPage from "./pages/Post";
 import ProfilePage from "./pages/Profile";
 import VolunteerPage from "./pages/Volunteer";
+import LoginPage from "./pages/Signin";
+import SignupPage from "./pages/Signup";
 
 const routes = [
   {
+    path: "/",
+    element: <LoginPage />
+  },
+  {
+    path: "/signup",
+    element: <SignupPage />
+  },
+  {
     path: "/home",
-    element: <HomePage />,
+    element: <HomePage />
   },
   {
     path: "/details",
-    element: <EventDetails />,
+    element: <EventDetails />
   },
   {
     path: "/events",
-    element: <EventsPage />,
+    element: <EventsPage />
   },
   {
     path: "/volunteer",
-    element: <VolunteerPage />,
+    element: <VolunteerPage />
   },
   {
     path: "/contact",
-    element: <ContactPage />,
+    element: <ContactPage />
   },
   {
     path: "/post",
-    element: <PostEventPage />,
+    element: <PostEventPage />
   },
   {
     path: "/profile",
-    element: <ProfilePage />,
+    element: <ProfilePage />
   },
 ];
 export { routes };

@@ -13,7 +13,9 @@
   font-family: 'Borel', cursive;
   font-size: 24px;
   font-weight: 700;
-  color: #5048E5;
+  color: transparent;
+  background: linear-gradient(to right,#0D1117 ,#6C63FF);
+  background-clip: text;
   margin: 0; /* إزالة أي margin افتراضي */
   line-height: 32px; /* يجعلها محاذية للصورة */
 }
@@ -26,7 +28,7 @@
 
 .navbar-nav .nav-link {
   position: relative;
-  color: #171717;
+  color: #0D1117;
   font-weight: 500;
   margin: 0 12px;
   padding-bottom: 4px;
@@ -43,12 +45,12 @@
   height: 2px;
   left: 0;
   bottom: 0;
-  background-color: #5048E5;
+  background-color: #6C63FF;
   transition: width 0.3s ease;
 }
 
 .navbar-nav .nav-link:hover {
-  color: #5048E5;
+  color: #6C63FF;
 }
 
 .navbar-nav .nav-link:hover::after,
@@ -57,7 +59,7 @@
 }
 
 .navbar-nav .nav-link.active {
-  color: #5048E5;
+  color: #6C63FF;
   font-weight: 600;
 }
 
@@ -72,28 +74,29 @@
 /*---------------------------/*
 /* Buttons */
 .btn-outline {
-  border: 1px solid #5048E5;
-  color: #5048E5;
-  transition: all 0.3s ease;
+  border: 1px solid #6C63FF;
+  color: #6C63FF;
+  transition:  0.6s ease;
 }
 .btn-outline:hover {
-  background: #5048E5;
+  background: #2f3e53;
   color: #fff;
 }
 .btn-primary {
-  background: #5048E5;
+  background: #6C63FF;
   border: none;
+  transition: 0.6s ease;
 }
 .btn-primary:hover {
-  background: #3d38c4;
+  background: #2f3e53;
 }
 
 .logout-btn {
-  color: #5048E5;
+  color: #6C63FF;
   text-decoration: none;
   transition: 0.3s ease;
 }
 
 .logout-btn:hover {
-  opacity: 0.85;
+  color: #2f3e53;
 }

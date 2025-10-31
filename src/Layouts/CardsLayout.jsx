@@ -88,7 +88,7 @@ function CardsSection() {
       <div className="row align-items-center justify-content-center m-2 p-2 g-5">
         {eventsData.map((event, index) => (
           <div key={index} className="col-12 col-sm-6 col-lg-4">
-            <div className="card h-100" style={{ borderRadius: "20px" }}>
+            <div className="card event-card h-100" style={{ borderRadius: "20px" }}>
               <img
                 src={event.img}
                 className="card-img-top img-fluid"
