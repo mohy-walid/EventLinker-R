@@ -61,8 +61,8 @@ function HomePage() {
                   place: "Grand Ballroom Hotel",
                 },
               ].map((event, index) => (
-                <div key={index} className="col-lg-4 col-md-6 event-card">
-                  <div className="card">
+                <div key={index} className="col-lg-4 col-md-6">
+                  <div className="card event-card">
                     <img src={event.img} className="card-img-top" alt={event.title} />
                     <div className="card-body">
                       <h5 className="card-title">{event.title}</h5>

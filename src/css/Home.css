@@ -62,8 +62,7 @@ header .btn-primary:hover {
     padding: 12px; 
   }
   .event-card:hover {
-    transform:scale(1.05);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
  
   }
   /*------------- Stay Connected -------------------*/
