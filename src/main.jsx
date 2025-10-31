@@ -10,7 +10,7 @@ import "./css/Navbar.css";
 import "./css/Footer.css";
 import "./css/Home.css";
 import "./css/details.css";
-
+import "./css/Profile.css"
 
 
 
