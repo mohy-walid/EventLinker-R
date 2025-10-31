@@ -7,7 +7,7 @@ function HomePage() {
   // انا ضايفة فانكشن تبع الفورم هناااا
   const navigate = useNavigate();
   const handleBack = (event) => {
-    if (location.pathname === "/") {
+    if (location.pathname === "/home") {
       event.preventDefault();
       navigate("/home", { replace: true });
     }
