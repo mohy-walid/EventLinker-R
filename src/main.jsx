@@ -10,7 +10,10 @@ import "./css/Navbar.css";
 import "./css/Footer.css";
 import "./css/Home.css";
 import "./css/details.css";
-import "./css/Profile.css"
+import "./css/Profile.css";
+import "./css/Events.css";
+import "./css/Volunteer.css";
+
 
 
 
