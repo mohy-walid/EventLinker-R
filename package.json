@@ -12,6 +12,7 @@
   "dependencies": {
     "@react-three/drei": "^10.7.6",
     "@react-three/fiber": "^9.4.0",
+    "aos": "^2.3.4",
     "axios": "^1.12.2",
     "bootstrap": "^5.3.8",
     "miragejs": "^0.1.48",

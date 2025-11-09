@@ -5,6 +5,7 @@ import "../css/Home.css";
 
 
 function HomePage() {
+  // حاطة هنا فانكشن
   const navigate = useNavigate();
 
   const handleBack = (event) => {
@@ -13,6 +14,7 @@ function HomePage() {
       navigate("/home", { replace: true });
     }
   };
+  const visitDetails = ()=> navigate("/details");
 
   const isLogged = CheckLogin();
 
@@ -94,7 +96,7 @@ function HomePage() {
                         <h5 className="card-title">{event.title}</h5>
                         <p className="card-text">{event.date}</p>
                         <p className="card-text">{event.place}</p>
-                        <button className="btn btn-primary visit-btn">
+                        <button className="btn btn-primary visit-btn" onClick={visitDetails}>
                           Visit Now
                         </button>
                       </div>
