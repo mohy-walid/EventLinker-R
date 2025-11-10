@@ -1,6 +1,10 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 
 function Navbar() {
+  const navigate = useNavigate()
+  const logOut =()=>{
+    navigate("/");
+  };
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary fixed-top">
       <div className="container d-flex align-items-center justify-content-between">
@@ -24,7 +28,7 @@ function Navbar() {
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav mx-auto">
             <li className="nav-item">
-              <NavLink to="/" className="nav-link">
+              <NavLink to="/home" className="nav-link">
                 Home
               </NavLink>
             </li>
@@ -59,10 +63,10 @@ function Navbar() {
               <i className="fa-solid fa-user-group"></i> Profile
             </NavLink>
            <NavLink
-              to="/form"
+              to="/"
               className="logout-btn d-flex align-items-center justify-content-center"
             >
-              <i className="fa-solid fa-arrow-right-from-bracket"></i>
+              <i className="fa-solid fa-arrow-right-from-bracket" onClick={logOut}></i>
             </NavLink>
           </div>
         </div>

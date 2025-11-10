@@ -1,6 +1,6 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import './index.css'
+import './App.css'
 import App from './App.jsx'
 import { BrowserRouter } from 'react-router-dom'
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
@@ -9,8 +9,11 @@ import '../fontawesome-free-7.0.1-web/css/all.min.css';
 import "./css/Navbar.css";
 import "./css/Footer.css";
 import "./css/Home.css";
-import "./css/Profile.css"
-
+import "./css/details.css";
+import "./css/Profile.css";
+import "./css/Events.css";
+import "./css/Volunteer.css";
+import "./css/form.css";
 
 
 
