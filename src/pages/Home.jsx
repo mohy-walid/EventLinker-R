@@ -3,7 +3,6 @@ import CheckLogin from "../utils/CheckLog";
 import ThreeBackground from "../components/ThreeBackground";
 import "../css/Home.css";
 
-
 function HomePage() {
   // حاطة هنا فانكشن
   const navigate = useNavigate();
@@ -14,8 +13,10 @@ function HomePage() {
       navigate("/home", { replace: true });
     }
   };
-  const visitDetails = ()=> navigate("/details");
 
+  const visitDetails = (event) => {
+    navigate("/details", { state: event });
+  };
   const isLogged = CheckLogin();
 
   if (isLogged) {
@@ -35,7 +36,10 @@ function HomePage() {
               Discover, register, and volunteer for amazing events happening
               around you. Your next adventure awaits!
             </p>
-            <button className="btn btn-primary explore-btn">
+            <button
+              className="btn btn-primary explore-btn"
+              onClick={() => navigate("/events")}
+            >
               Explore Events
             </button>
           </div>
@@ -96,7 +100,10 @@ function HomePage() {
                         <h5 className="card-title">{event.title}</h5>
                         <p className="card-text">{event.date}</p>
                         <p className="card-text">{event.place}</p>
-                        <button className="btn btn-primary visit-btn" onClick={visitDetails}>
+                        <button
+                          className="btn btn-primary visit-btn"
+                          onClick={() => visitDetails(event)}
+                        >
                           Visit Now
                         </button>
                       </div>

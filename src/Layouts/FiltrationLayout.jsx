@@ -2,7 +2,7 @@ function FiltrationSection() {
   return (
     <>
       <div
-        className="filtration container-fluid py-2 w-100"
+        className="filtration py-2 w-100"
         style={{
           backgroundColor: "white",
           border: "1px grey solid",

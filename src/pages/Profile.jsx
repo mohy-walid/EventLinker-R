@@ -7,10 +7,10 @@ import UserProfile from "../components/UserProfile";
 
 function ProfilePage() {
   const [role, setRole] = useState("");
-  const [email, setEmail] = useState("");
+  const [, setEmail] = useState("");
 
   useEffect(() => {
-    // ✅ إنشاء حسابات تجريبية في localStorage (لو مش موجودة)
+    // إنشاء حسابات تجريبية في localStorage (لو مش موجودة)
     const accounts = [
       {
         id: 4001,
@@ -88,7 +88,6 @@ function ProfilePage() {
                 <option value="admin">Admin</option>
                 <option value="superadmin">Super Admin</option>
               </select>
-              {email && <p className="mt-2">Current: {email}</p>}
             </div>
 
             {/* عرض المحتوى حسب الدور */}

@@ -34,6 +34,18 @@ function ProfileHead() {
 
   // حفظ التعديلات
   const handleSave = () => {
+    // جلب كل المستخدمين
+    const users = JSON.parse(localStorage.getItem("users")) || [];
+
+    // تحديث بيانات المستخدم الحالي بالصورة الجديدة
+    const updatedUsers = users.map((user) =>
+      user.id === formData.id ? formData : user
+    );
+
+    // تخزينهم مرة تانية
+    localStorage.setItem("users", JSON.stringify(updatedUsers));
+
+    // تحديث currentUser
     localStorage.setItem("currentUser", JSON.stringify(formData));
     setUserData(formData);
     setShowModal(false);
@@ -132,7 +144,7 @@ function ProfileHead() {
                   <img
                     src={formData.image}
                     alt="Preview"
-                    className="rounded-circle mb-2"
+                    className="form-img rounded-circle mb-2"
                   />
                   <br />
                   <Button
