@@ -4,7 +4,6 @@ import ThreeBackground from "../components/ThreeBackground";
 import "../css/Home.css";
 
 function HomePage() {
-  // حاطة هنا فانكشن
   const navigate = useNavigate();
 
   const handleBack = (event) => {
@@ -17,6 +16,7 @@ function HomePage() {
   const visitDetails = (event) => {
     navigate("/details", { state: event });
   };
+
   const isLogged = CheckLogin();
 
   if (isLogged) {
@@ -90,7 +90,7 @@ function HomePage() {
                   },
                 ].map((event, index) => (
                   <div key={index} className="col-lg-4 col-md-6">
-                    <div className="card  home-card">
+                    <div className="card home-card">
                       <img
                         src={event.img}
                         className="card-img-top"
@@ -223,7 +223,7 @@ function Testimonial({ text, img, name }) {
   return (
     <div className="col-md-4">
       <div className="card shadow-sm p-4 h-100 text-center">
-        <p className="mb-4">“{text}”</p>
+        <p className="mb-4">"{text}"</p>
         <img
           src={img}
           alt={name}

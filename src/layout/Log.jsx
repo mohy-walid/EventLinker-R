@@ -2,6 +2,7 @@ import { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import { useNavigate } from "react-router-dom";
+import AdminCredentials from "../components/AdminCredentials";
 
 function LogLayout() {
   const [validated, setValidated] = useState(false);
@@ -55,6 +56,8 @@ function LogLayout() {
   };
 
   return (
+    <>
+    <AdminCredentials/>
     <div className="log-form">
       <Form noValidate validated={validated} onSubmit={handleSubmit}>
         <Form.Group controlId="validationCustom01" className="mb-4">
@@ -97,6 +100,7 @@ function LogLayout() {
         </div>
       </Form>
     </div>
+    </>
   );
 }
 

@@ -1,16 +1,22 @@
 body{
   margin-top: 100px !important;
+  background-color: whitesmoke !important;
 }
+
 .volunteer-card{
     animation: motion 2s linear;
 }
 
 
 .volunteer-card:hover{
-    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.3);
-    transform:scale(1.1);
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.3);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
+.volunteer-card h5  {
+    font-size: 15px;
+}
+
 
 .filtration{
     animation:move 2s linear;

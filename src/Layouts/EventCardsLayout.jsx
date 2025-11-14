@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 const eventsData = [
   {
@@ -9,7 +10,8 @@ const eventsData = [
     description:
       "Join leading experts and innovators for discussions on AI, blockchain, and sustainable tech.",
     img: "public/img/events_card_1.PNG",
-    detailsLink: "/Event/html/details.html",
+    date: "October 26, 2024",
+    place: "Virtual - Online",
   },
   {
     id: 2,
@@ -19,7 +21,8 @@ const eventsData = [
     description:
       "Indulge in a delightful array of international cuisines, local delicacies, and gourmet treats.",
     img: "public/img/events_card_2.PNG",
-    detailsLink: "/Event/html/details.html",
+    date: "November 10, 2024",
+    place: "City Park Arena",
   },
   {
     id: 3,
@@ -29,7 +32,8 @@ const eventsData = [
     description:
       "Learn the latest trends in SEO, social media, content creation, and analytics. Gain actionable insights",
     img: "public/img/events_card_3.PNG",
-    detailsLink: "/Event/html/details.html",
+    date: "December 05, 2024",
+    place: "Convention Center",
   },
   {
     id: 4,
@@ -39,7 +43,8 @@ const eventsData = [
     description:
       "Escape the daily grind and immerse yourself in a serene environment focused on personal well-being",
     img: "public/img/events_card_4.PNG",
-    detailsLink: "/Event/html/details.html",
+    date: "January 15, 2025",
+    place: "Mountain Lodge Resort",
   },
   {
     id: 5,
@@ -49,7 +54,8 @@ const eventsData = [
     description:
       "Witness groundbreaking startups present their ideas to a panel of investors and entrepreneurs.",
     img: "public/img/events_card_5.PNG",
-    detailsLink: "/Event/html/details.html",
+    date: "February 20, 2025",
+    place: "Innovation Hub",
   },
   {
     id: 6,
@@ -59,7 +65,8 @@ const eventsData = [
     description:
       "Explore diverse art forms, from contemporary paintings to traditional crafts. Enjoy live",
     img: "public/img/events_card_6.PNG",
-    detailsLink: "/Event/html/details.html",
+    date: "March 08, 2025",
+    place: "Grand Art Gallery",
   },
   {
     id: 7,
@@ -69,7 +76,8 @@ const eventsData = [
     description:
       "Experience the thrill of competitive gaming as top teams battle it out for glory and prizes. Witness",
     img: "public/img/events_card_7.PNG",
-    detailsLink: "/Event/html/details.html",
+    date: "April 12, 2025",
+    place: "Cyberdome Arena",
   },
   {
     id: 8,
@@ -79,7 +87,8 @@ const eventsData = [
     description:
       "Discover eco-friendly products, sustainable practices, and innovative solutions for conscious",
     img: "public/img/events_card_8.PNG",
-    detailsLink: "/Event/html/details.html",
+    date: "May 25, 2025",
+    place: "Community Garden",
   },
   {
     id: 9,
@@ -89,32 +98,66 @@ const eventsData = [
     description:
       "Connect with industry leaders, attend insightful keynotes, and explore cutting-edge solutions in AI, cybersecurity, and cloud computing.",
     img: "public/img/events_card_9.PNG",
-    detailsLink: "/Event/html/details.html",
+    date: "October 26, 2024",
+    place: "Convention Center",
   },
 ];
 
 function CardsSection() {
-  const [savedIds, setSavedIds] = useState(
-    JSON.parse(localStorage.getItem("savedEventIds")) || []
-  );
+  const navigate = useNavigate();
+  const [savedIds, setSavedIds] = useState([]);
+
+  // دالة للحصول على مفتاح خاص بالمستخدم
+  const getUserKey = (baseKey) => {
+    const user = JSON.parse(localStorage.getItem("currentUser"));
+    if (!user) return null;
+    return `${baseKey}_${user.id}`;
+  };
+
+  // تحميل الأحداث المحفوظة للمستخدم الحالي
+  useEffect(() => {
+    const idsKey = getUserKey("savedEventIds");
+    if (idsKey) {
+      const ids = JSON.parse(localStorage.getItem(idsKey)) || [];
+      setSavedIds(ids);
+    }
+  }, []);
 
   const handleSave = (event) => {
-    const savedEvents = JSON.parse(localStorage.getItem("savedEvents")) || [];
-    const exists = savedEvents.find((e) => e.title === event.title);
+    // التحقق من تسجيل الدخول
+    const user = JSON.parse(localStorage.getItem("currentUser"));
+    if (!user) {
+      alert("Please login to save events!");
+      navigate("/");
+      return;
+    }
+
+    // الحصول على المفاتيح الخاصة بالمستخدم
+    const eventsKey = getUserKey("savedEvents");
+    const idsKey = getUserKey("savedEventIds");
+
+    const savedEvents = JSON.parse(localStorage.getItem(eventsKey)) || [];
+    const exists = savedEvents.find((e) => e.id === event.id);
 
     if (exists) {
       alert("You already saved this event!");
       return;
     }
 
+    // حفظ الحدث
     const updated = [...savedEvents, event];
-    localStorage.setItem("savedEvents", JSON.stringify(updated));
+    localStorage.setItem(eventsKey, JSON.stringify(updated));
 
+    // حفظ الـ ID
     const newIds = [...savedIds, event.id];
-    localStorage.setItem("savedEventIds", JSON.stringify(newIds));
+    localStorage.setItem(idsKey, JSON.stringify(newIds));
     setSavedIds(newIds);
 
     alert("Event saved successfully!");
+  };
+
+  const visitDetails = (event) => {
+    navigate("/details", { state: event });
   };
 
   return (
@@ -123,15 +166,12 @@ function CardsSection() {
         {eventsData.map((event) => (
           <div key={event.id} className="col-12 col-sm-6 col-lg-3">
             <div
-              className="card event-card"
+              className="card event-card h-100"
               style={{ borderRadius: "20px" }}
             >
-              <img
-                src={event.img}
-                alt={event.title}
-              />
+              <img src={event.img} alt={event.title} />
 
-              <div className="card-body position-relative">
+              <div className="card-body position-relative d-flex flex-column">
                 {/* عنوان الإيفينت */}
                 <h5 className="fw-bold">{event.title}</h5>
 
@@ -152,22 +192,26 @@ function CardsSection() {
                 </span>
 
                 <p>{event.text}</p>
-
-                {event.tags.map((tag, i) => (
-                  <span
-                    key={i}
-                    className="badge rounded-pill text-bg-secondary me-1"
-                  >
-                    {tag}
-                  </span>
-                ))}
+                <div className="d-flex flex-wrap mb-2">
+                  {event.tags.map((tag, i) => (
+                    <span
+                      key={i}
+                      className="badge rounded-pill text-bg-secondary me-1 mb-1"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
 
                 <p className="m-2">{event.description}</p>
 
-                <div className="d-flex justify-content-end align-items-end mt-2">
-                  <a href={event.detailsLink} className="btn btn-primary">
+                <div className="d-flex justify-content-end">
+                  <button
+                    className="mt-auto btn btn-primary"
+                    onClick={() => visitDetails(event)}
+                  >
                     Visit Now
-                  </a>
+                  </button>
                 </div>
               </div>
             </div>

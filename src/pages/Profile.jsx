@@ -51,44 +51,12 @@ function ProfilePage() {
     }
   }, []);
 
-  // 🔁 تغيير المستخدم الحالي
-  const handleUserChange = (e) => {
-    const selectedRole = e.target.value;
-    if (!selectedRole) return;
-
-    const selectedAccount = JSON.parse(localStorage.getItem(selectedRole + "_account"));
-    if (selectedAccount) {
-      localStorage.setItem("currentUser", JSON.stringify(selectedAccount));
-      setRole(selectedAccount.role);
-      setEmail(selectedAccount.email);
-    }
-  };
-
   return (
     <>
       <div className="container-fluid">
         <div className="row content">
           <main className="col-md-9 col-lg-10 px-md-4">
             <ProfileHead />
-
-            {/* 🔽 Dropdown لتبديل الحساب */}
-            <div className="mt-3">
-              <label htmlFor="switchUser" className="fw-bold me-2">
-                Switch Account:
-              </label>
-              <select
-                id="switchUser"
-                value={role}
-                onChange={handleUserChange}
-                className="form-select w-auto d-inline-block"
-              >
-                <option value="">Select Role</option>
-                <option value="user">User</option>
-                <option value="organizer">Organizer</option>
-                <option value="admin">Admin</option>
-                <option value="superadmin">Super Admin</option>
-              </select>
-            </div>
 
             {/* عرض المحتوى حسب الدور */}
             {role === "user" && <UserProfile/>}

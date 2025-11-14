@@ -1,7 +1,7 @@
 import "../css/Events.css"
-import CardsSection from "../Layouts/CardsLayout";
-import FiltrationSection from "../Layouts/FiltrationLayout";
-import HeaderSection from "../Layouts/HeaderLayout";
+import CardsSection from "../Layouts/EventCardsLayout";
+import FiltrationSection from "../Layouts/EventFiltrationLayout";
+import HeaderSection from "../Layouts/EventHeaderLayout";
 
 const EventsPage = () => {
   return (
