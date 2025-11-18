@@ -1,5 +1,14 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import event1 from "../assets/img/events_card_1.PNG"
+import event2 from "../assets/img/events_card_2.PNG"
+import event3 from "../assets/img/events_card_3.PNG"
+import event4 from "../assets/img/events_card_4.PNG"
+import event5 from "../assets/img/events_card_5.PNG"
+import event6 from "../assets/img/events_card_6.PNG"
+import event7 from "../assets/img/events_card_7.PNG"
+import event8 from "../assets/img/events_card_8.PNG"
+import event9 from "../assets/img/events_card_9.PNG"
 
 const eventsData = [
   {
@@ -9,7 +18,7 @@ const eventsData = [
     tags: ["Conference", "Oct 26, 9:00 AM", "Virtual - Online"],
     description:
       "Join leading experts and innovators for discussions on AI, blockchain, and sustainable tech.",
-    img: "public/img/events_card_1.PNG",
+    img: event1,
     date: "October 26, 2024",
     place: "Virtual - Online",
   },
@@ -20,7 +29,7 @@ const eventsData = [
     tags: ["Festival", "Nov 10, 11:00 AM", "City Park Arena"],
     description:
       "Indulge in a delightful array of international cuisines, local delicacies, and gourmet treats.",
-    img: "public/img/events_card_2.PNG",
+    img: event2,
     date: "November 10, 2024",
     place: "City Park Arena",
   },
@@ -31,7 +40,7 @@ const eventsData = [
     tags: ["Workshop", "Dec 05, 10:00 AM", "Convention Center"],
     description:
       "Learn the latest trends in SEO, social media, content creation, and analytics. Gain actionable insights",
-    img: "public/img/events_card_3.PNG",
+    img: event3,
     date: "December 05, 2024",
     place: "Convention Center",
   },
@@ -42,7 +51,7 @@ const eventsData = [
     tags: [" Retreat", " Jan 15, 8:00 AM", " Mountain Lodge Resort"],
     description:
       "Escape the daily grind and immerse yourself in a serene environment focused on personal well-being",
-    img: "public/img/events_card_4.PNG",
+    img: event4,
     date: "January 15, 2025",
     place: "Mountain Lodge Resort",
   },
@@ -53,7 +62,7 @@ const eventsData = [
     tags: ["Competition", " Feb 20, 2:00 PM", " Innovation Hub"],
     description:
       "Witness groundbreaking startups present their ideas to a panel of investors and entrepreneurs.",
-    img: "public/img/events_card_5.PNG",
+    img: event5,
     date: "February 20, 2025",
     place: "Innovation Hub",
   },
@@ -64,7 +73,7 @@ const eventsData = [
     tags: [" Exhibition", "Mar 08, 10:00 AM", " Grand Art Gallery"],
     description:
       "Explore diverse art forms, from contemporary paintings to traditional crafts. Enjoy live",
-    img: "public/img/events_card_6.PNG",
+    img: event6,
     date: "March 08, 2025",
     place: "Grand Art Gallery",
   },
@@ -75,7 +84,7 @@ const eventsData = [
     tags: [" Tournament", "  Apr 12, 6:00 PM", " Cyberdome Arena"],
     description:
       "Experience the thrill of competitive gaming as top teams battle it out for glory and prizes. Witness",
-    img: "public/img/events_card_7.PNG",
+    img: event7,
     date: "April 12, 2025",
     place: "Cyberdome Arena",
   },
@@ -86,7 +95,7 @@ const eventsData = [
     tags: [" Fair", " May 25, 10:00 AM", " Community Garden"],
     description:
       "Discover eco-friendly products, sustainable practices, and innovative solutions for conscious",
-    img: "public/img/events_card_8.PNG",
+    img: event8,
     date: "May 25, 2025",
     place: "Community Garden",
   },
@@ -97,7 +106,7 @@ const eventsData = [
     tags: [" Conference", " October 26,2024", "Convention Center"],
     description:
       "Connect with industry leaders, attend insightful keynotes, and explore cutting-edge solutions in AI, cybersecurity, and cloud computing.",
-    img: "public/img/events_card_9.PNG",
+    img: event9,
     date: "October 26, 2024",
     place: "Convention Center",
   },

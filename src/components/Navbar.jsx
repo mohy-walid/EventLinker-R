@@ -1,5 +1,6 @@
 import { NavLink, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
+import logo from "../assets/img/9c5e0db0-ca21-47c4-b07a-4215d667ad16_62f9708f-375c-48ad-b0d7-4109d9248ce7_1406497_image.svg"
 
 function Navbar() {
   const navigate = useNavigate();
@@ -28,7 +29,7 @@ function Navbar() {
       <div className="container d-flex align-items-center justify-content-between">
         <div className="logo d-flex">
           <img
-            src="../../public/img/9c5e0db0-ca21-47c4-b07a-4215d667ad16_62f9708f-375c-48ad-b0d7-4109d9248ce7_1406497_image.svg"
+            src={logo}
             alt=""
           />
           <h3 className="ms-2">EventLinker</h3>

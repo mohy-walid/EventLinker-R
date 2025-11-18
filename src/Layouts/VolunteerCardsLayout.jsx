@@ -1,5 +1,13 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import volunteer1 from "../assets/img/1.png"
+import volunteer2 from "../assets/img/2.png"
+import volunteer3 from "../assets/img/3.png"
+import volunteer4 from "../assets/img/4.png"
+import volunteer5 from "../assets/img/5.png"
+import volunteer6 from "../assets/img/6.png"
+
+
 
 const volunteerData = [
   {
@@ -7,7 +15,7 @@ const volunteerData = [
     title: "Park Cleanup Drive",
     org: "Green Earth Foundation",
     tags: ["Environment", "October 26, 2024", "Central Park"],
-    img: "public/img/1.png",
+    img: volunteer1,
     description:
       "Join us for a community park cleanup to restore the beauty of our local green spaces. Gloves and bags will be provided. All ages welcome!",
   },
@@ -16,7 +24,7 @@ const volunteerData = [
     title: "Youth Mentoring Program",
     org: "Future Leaders Hub",
     tags: ["Education", "November 10, 2024", "Community Center"],
-    img: "public/img/2.png",
+    img: volunteer2,
     description:
       "Help guide young minds through our mentorship program. Share your knowledge and make a positive impact on a child's future.",
   },
@@ -25,7 +33,7 @@ const volunteerData = [
     title: "Homeless Shelter Support",
     org: "City Outreach Program",
     tags: ["Community", "December 01, 2024", "Downtown Shelter"],
-    img: "public/img/3.png",
+    img: volunteer3,
     description:
       "Assist with meal preparation and distribution at the city's largest homeless shelter. Your help makes a difference.",
   },
@@ -34,7 +42,7 @@ const volunteerData = [
     title: "Elderly Companion Service",
     org: "Golden Years Alliance",
     tags: ["Healthcare", "Ongoing", "Various Homes"],
-    img: "public/img/4.png",
+    img: volunteer4,
     description:
       "Provide companionship and support to seniors in their homes, offering a friendly face and a helping hand with daily tasks.",
   },
@@ -43,7 +51,7 @@ const volunteerData = [
     title: "Animal Shelter Assistant",
     org: "Paws & Claws Rescue",
     tags: ["Animals", "November 15, 2024", "Local Animal Shelter"],
-    img: "public/img/5.png",
+    img: volunteer5,
     description:
       "Spend time with our furry friends! Help with feeding, cleaning, and providing love to animals awaiting adoption.",
   },
@@ -52,7 +60,7 @@ const volunteerData = [
     title: "Coastal Conservation Project",
     org: "Ocean Guardians",
     tags: ["Environmental", "January 20, 2025", "North Beach"],
-    img: "public/img/6.png",
+    img: volunteer6,
     description:
       "Join us in protecting our marine ecosystems. Participate in our monthly beach cleanup and contribute to a healthier ocean.",
   },

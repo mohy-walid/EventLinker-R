@@ -2,6 +2,17 @@ import { useNavigate } from "react-router-dom";
 import CheckLogin from "../utils/CheckLog";
 import ThreeBackground from "../components/ThreeBackground";
 import "../css/Home.css";
+import e1 from "../assets/img/1.png"
+import e2 from "../assets/img/2.png"
+import e3 from "../assets/img/3.png"
+import e4 from "../assets/img/4.png"
+import e5 from "../assets/img/5.png"
+import e6 from "../assets/img/6.png"
+import t1 from "../assets/img/J1.jpg"
+import t2 from "../assets/img/C1.jpg"
+import t3 from "../assets/img/E1.jpg"
+
+
 
 function HomePage() {
   const navigate = useNavigate();
@@ -53,37 +64,37 @@ function HomePage() {
               <div className="row g-4">
                 {[
                   {
-                    img: "../../public/img/1.png",
+                    img: e1,
                     title: "Harmony Fest 2025",
                     date: "August 12 - 14, 2025",
                     place: "City Park Amphitheater",
                   },
                   {
-                    img: "../../public/img/2.png",
+                    img: e2,
                     title: "Global Tech Summit",
                     date: "September 5 - 7, 2025",
                     place: "Convention Center Hall A",
                   },
                   {
-                    img: "../../public/img/3.png",
+                    img: e3,
                     title: "Modern Art Exhibition",
                     date: "October 1 - 31, 2025",
                     place: "Downtown Gallery",
                   },
                   {
-                    img: "../../public/img/4.png",
+                    img: e4,
                     title: "Taste of the City Food Festival",
                     date: "November 9 - 10, 2025",
                     place: "Riverside Promenade",
                   },
                   {
-                    img: "../../public/img/5.png",
+                    img: e5,
                     title: "Annual Charity Run",
                     date: "December 1, 2024",
                     place: "Community Sports Arena",
                   },
                   {
-                    img: "../../public/img/6.png",
+                    img: e6,
                     title: "Winter Gala Extravaganza",
                     date: "December 24, 2025",
                     place: "Grand Ballroom Hotel",
@@ -126,17 +137,17 @@ function HomePage() {
                   <div className="row justify-content-center">
                     <Testimonial
                       text="This website made finding and registering for events incredibly easy. The interface is clean and intuitive!"
-                      img="../../public/img/E1.jpg"
+                      img={t1}
                       name="Sarah J."
                     />
                     <Testimonial
                       text="Volunteering opportunities are so well organized here. I found a perfect cause to contribute to."
-                      img="../../public/img/J1.jpg"
+                      img={t2}
                       name="Michael P."
                     />
                     <Testimonial
                       text="The event details are comprehensive, and the registration process was smooth and secure."
-                      img="../../public/img/C1.jpg"
+                      img={t3}
                       name="Emily R."
                     />
                   </div>
@@ -146,17 +157,17 @@ function HomePage() {
                   <div className="row justify-content-center">
                     <Testimonial
                       text="Great experience overall. I found new events and met amazing people."
-                      img="../../public/img/E1.jpg"
+                      img={t1}
                       name="David K."
                     />
                     <Testimonial
                       text="I love how easy it is to search and filter events by category."
-                      img="../../public/img/J1.jpg"
+                      img={t2}
                       name="Laura M."
                     />
                     <Testimonial
                       text="Perfect for finding volunteering and networking opportunities."
-                      img="../../public/img/C1.jpg"
+                      img={t3}
                       name="James H."
                     />
                   </div>
