@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import DetailsLay from "../layout/DetailsLayout";
-import SpeakerLay from "../layout/SpeakerLay";
+import DetailsLay from "../Layouts/DetailsLayout";
+import SpeakerLay from "../Layouts/SpeakerLay";
 import AOS from "aos";
 import "aos/dist/aos.css";
 

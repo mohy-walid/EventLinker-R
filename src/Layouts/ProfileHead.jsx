@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Modal, Button, Form } from "react-bootstrap";
-import userImg from "../assets/img/User.png";
+import userImg from "../../public/img/User.png";
 
 function ProfileHead() {
   const [userData, setUserData] = useState(null);

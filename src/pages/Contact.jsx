@@ -21,7 +21,7 @@ const ContactPage = () => {
                 </h4>
                 <form>
                   <div className="mb-3">
-                    <label className="form-label">Full Name</label>
+                    <label className="form-label text-primary">Full Name</label>
                     <input
                       type="text"
                       className="form-control"
@@ -29,7 +29,7 @@ const ContactPage = () => {
                     />
                   </div>
                   <div className="mb-3">
-                    <label className="form-label">Email</label>
+                    <label className="form-label text-primary">Email</label>
                     <input
                       type="email"
                       className="form-control"
@@ -37,7 +37,7 @@ const ContactPage = () => {
                     />
                   </div>
                   <div className="mb-3">
-                    <label className="form-label">Phone</label>
+                    <label className="form-label text-primary">Phone</label>
                     <input
                       type="text"
                       className="form-control"
@@ -45,14 +45,14 @@ const ContactPage = () => {
                     />
                   </div>
                   <div className="mb-3">
-                    <label className="form-label">Message</label>
+                    <label className="form-label text-primary">Message</label>
                     <textarea
                       rows="4"
                       className="form-control"
                       placeholder="Write your message"
                     ></textarea>
                   </div>
-                  <button type="submit" className="btn btn-gradient w-100 send-btn">
+                  <button type="submit" className="btn btn-primary w-100 send-btn">
                     Send Message
                   </button>
                 </form>
@@ -69,15 +69,15 @@ const ContactPage = () => {
                   <p className="text-muted">
                     Our team is ready to assist with any inquiries about events, volunteering, or partnerships.
                   </p>
-                  <p className="fw-medium">
+                  <p className="fw-medium text-dark">
                     <i className="fa-solid fa-phone me-2" style={{ color: "#3D38C4" }}></i>
                     +1 (555) 123-4567
                   </p>
-                  <p className="fw-medium">
+                  <p className="fw-medium text-dark">
                     <i className="fa-solid fa-envelope me-2" style={{ color: "#3D38C4" }}></i>
                     info@eventmanagement.com
                   </p>
-                  <p className="fw-medium">
+                  <p className="fw-medium text-dark">
                     <i className="fa-solid fa-location-dot me-2" style={{ color: "#3D38C4" }}></i>
                     123 Event Avenue, Suite 100, Metropolis, CA 90210
                   </p>

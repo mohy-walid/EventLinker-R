@@ -10,20 +10,18 @@
 }
 
 .logo h3 {
-  font-family: 'Borel', cursive;
   font-size: 24px;
   font-weight: 700;
   color: transparent;
   background: linear-gradient(to right,#0D1117 ,#6C63FF);
   background-clip: text;
-  margin: 0; /* إزالة أي margin افتراضي */
-  line-height: 32px; /* يجعلها محاذية للصورة */
+  margin: 0; 
+  line-height: 32px; 
 }
 
 /* Navbar Links */
 .navbar-nav {
   display: flex;
-  align-items: center; /* يحاذي كل اللينكات عموديًا */
 }
 
 .navbar-nav .nav-link {

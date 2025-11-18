@@ -1,7 +1,7 @@
-import speaker1 from "../assets/img/Selectionn.png"
-import speaker2 from "../assets/img/Selection (1).png"
-import speaker3 from "../assets/img/Selection (2).png"
-import speaker4 from "../assets/img/Selection (3).png"
+import speaker1 from "../../public/img/speaker4.png"
+import speaker2 from "../../public/img/speaker1.png"
+import speaker3 from "../../public/img/speaker2.png"
+import speaker4 from "../../public/img/speaker3.png"
 
 
 

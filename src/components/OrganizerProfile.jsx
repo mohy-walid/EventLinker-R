@@ -83,6 +83,18 @@ function OrganizerProfile() {
     return appliedUsers;
   };
 
+  // Function to load data
+  const loadData = () => {
+    const user = JSON.parse(localStorage.getItem("currentUser"));
+    if (user) {
+      const eventsKey = getUserKey("postedEvents", user.id);
+      const volunteersKey = getUserKey("postedVolunteers", user.id);
+      
+      setPostedEvents(JSON.parse(localStorage.getItem(eventsKey)) || []);
+      setPostedVolunteers(JSON.parse(localStorage.getItem(volunteersKey)) || []);
+    }
+  };
+
   useEffect(() => {
     // التحقق من تسجيل الدخول والصلاحيات
     const user = JSON.parse(localStorage.getItem("currentUser"));
@@ -99,14 +111,45 @@ function OrganizerProfile() {
     }
 
     setCurrentUser(user);
+    loadData();
 
-    // جلب الأحداث والفرص المنشورة من المنظم الحالي
-    const eventsKey = getUserKey("postedEvents", user.id);
-    const volunteersKey = getUserKey("postedVolunteers", user.id);
+    // Listen for storage changes (when new items are posted)
+    const handleStorageChange = () => {
+      loadData();
+    };
 
-    setPostedEvents(JSON.parse(localStorage.getItem(eventsKey)) || []);
-    setPostedVolunteers(JSON.parse(localStorage.getItem(volunteersKey)) || []);
+    window.addEventListener('storage', handleStorageChange);
+    
+    // Custom event for same-window updates
+    window.addEventListener('dataUpdated', handleStorageChange);
+
+    return () => {
+      window.removeEventListener('storage', handleStorageChange);
+      window.removeEventListener('dataUpdated', handleStorageChange);
+    };
   }, [navigate]);
+
+  // تعديل حدث
+  const handleEditEvent = (event) => {
+    navigate("/post", { 
+      state: { 
+        mode: "edit", 
+        type: "event",
+        data: event 
+      } 
+    });
+  };
+
+  // تعديل فرصة تطوع
+  const handleEditVolunteer = (volunteer) => {
+    navigate("/post", { 
+      state: { 
+        mode: "edit", 
+        type: "volunteer",
+        data: volunteer 
+      } 
+    });
+  };
 
   // حذف حدث منشور
   const handleDeleteEvent = (id) => {
@@ -176,11 +219,20 @@ function OrganizerProfile() {
                     className="btn btn-primary flex-grow-1"
                     onClick={() => visitDetails(event)}
                   >
-                    View Details
+                    <i className="fa-solid fa-eye me-1"></i>
+                    View
+                  </button>
+                  <button
+                    className="btn btn-outline-primary"
+                    onClick={() => handleEditEvent(event)}
+                    title="Edit Event"
+                  >
+                    <i className="fa-solid fa-edit"></i>
                   </button>
                   <button
                     className="btn btn-outline-danger"
                     onClick={() => handleDeleteEvent(event.id)}
+                    title="Delete Event"
                   >
                     <i className="fa-solid fa-trash"></i>
                   </button>
@@ -247,11 +299,20 @@ function OrganizerProfile() {
                     className="btn btn-primary flex-grow-1"
                     onClick={() => visitDetails(volunteer)}
                   >
-                    View Details
+                    <i className="fa-solid fa-eye me-1"></i>
+                    View
+                  </button>
+                  <button
+                    className="btn btn-outline-primary"
+                    onClick={() => handleEditVolunteer(volunteer)}
+                    title="Edit Volunteer"
+                  >
+                    <i className="fa-solid fa-edit"></i>
                   </button>
                   <button
                     className="btn btn-outline-danger"
                     onClick={() => handleDeleteVolunteer(volunteer.id)}
+                    title="Delete Volunteer"
                   >
                     <i className="fa-solid fa-trash"></i>
                   </button>
@@ -275,68 +336,106 @@ function OrganizerProfile() {
     }
 
     if (activeTab === "registrations") {
-      const allRegistrations = [
+      // Static display of all posted items with registration info
+      const allItems = [
         ...postedEvents.map(event => ({
           ...event,
-          type: "event",
-          count: getRegisteredCount(event.title),
-          users: getRegisteredUsers(event.title)
+          type: "event"
         })),
         ...postedVolunteers.map(volunteer => ({
           ...volunteer,
-          type: "volunteer",
-          count: getAppliedCount(volunteer.title),
-          users: getAppliedUsers(volunteer.title)
+          type: "volunteer"
         }))
-      ].filter(item => item.count > 0);
+      ];
 
-      return allRegistrations.length > 0 ? (
+      // Sample users for demonstration
+      const sampleUsers = [
+        { name: "Ahmed Mohamed", email: "ahmed.m@gmail.com" },
+        { name: "Sara Ali", email: "sara.ali@outlook.com" },
+        { name: "Mohamed Hassan", email: "m.hassan@yahoo.com" },
+        { name: "Fatma Ibrahim", email: "fatma.i@hotmail.com" },
+        { name: "Omar Khalil", email: "omar.k@gmail.com" },
+        { name: "Mariam Saeed", email: "mariam.s@outlook.com" },
+        { name: "Youssef Nabil", email: "youssef.n@gmail.com" },
+        { name: "Nour Ahmed", email: "nour.a@yahoo.com" }
+      ];
+
+      return allItems.length > 0 ? (
         <div className="row g-4 mt-3">
-          {allRegistrations.map((item, index) => (
-            <div key={index} className="col-12 col-lg-6">
-              <div className="card shadow-sm border-0 p-4" style={{ borderRadius: "20px" }}>
-                <div className="d-flex justify-content-between align-items-start mb-3">
-                  <div>
-                    <h5 className="fw-bold mb-1">{item.title}</h5>
-                    <span className={`badge ${item.type === "event" ? "bg-primary" : "bg-success"}`}>
-                      {item.type === "event" ? "Event" : "Volunteer"}
-                    </span>
-                  </div>
-                  <div className="text-end">
-                    <h3 className="mb-0 text-primary">{item.count}</h3>
-                    <small className="text-muted">
-                      {item.type === "event" ? "Registered" : "Applications"}
-                    </small>
-                  </div>
-                </div>
+          {allItems.map((item, index) => {
+            // Get real registered users
+            const realUsers = item.type === "event" 
+              ? getRegisteredUsers(item.title) 
+              : getAppliedUsers(item.title);
+            
+            // If no real users, show sample users (3-5 random users)
+            const displayUsers = realUsers.length > 0 
+              ? realUsers 
+              : sampleUsers.slice(0, Math.floor(Math.random() * 3) + 3);
+            
+            const totalCount = realUsers.length > 0 
+              ? (item.type === "event" ? getRegisteredCount(item.title) : getAppliedCount(item.title))
+              : displayUsers.length;
 
-                <div className="border-top pt-3">
-                  <p className="text-muted small mb-2 fw-semibold">
-                    <i className="fa-solid fa-users me-2"></i>
-                    Participants:
-                  </p>
-                  <div className="d-flex flex-column gap-2">
-                    {item.users.slice(0, 5).map((user, idx) => (
-                      <div key={idx} className="p-2 bg-light rounded d-flex justify-content-between align-items-center">
-                        <span className="fw-semibold">{user.name}</span>
-                        <span className="text-muted small">{user.email}</span>
-                      </div>
-                    ))}
-                    {item.count > 5 && (
-                      <span className="badge bg-secondary align-self-start">
-                        +{item.count - 5} more participants
+            return (
+              <div key={index} className="col-12 col-lg-6">
+                <div className="card shadow-sm border-0 p-4" style={{ borderRadius: "20px" }}>
+                  <div className="d-flex justify-content-between align-items-start mb-3">
+                    <div>
+                      <h5 className="fw-bold mb-1">{item.title}</h5>
+                      <span className={`badge ${item.type === "event" ? "bg-primary" : "bg-success"}`}>
+                        {item.type === "event" ? "Event" : "Volunteer"}
                       </span>
-                    )}
+                    </div>
+                    <div className="text-end">
+                      <h3 className="mb-0 text-primary">{totalCount}</h3>
+                      <small className="text-muted">
+                        {item.type === "event" ? "Registered" : "Applications"}
+                      </small>
+                    </div>
+                  </div>
+
+                  <div className="border-top pt-3">
+                    <p className="text-muted small mb-2 fw-semibold">
+                      <i className="fa-solid fa-users me-2"></i>
+                      People Registered:
+                    </p>
+                    <div className="d-flex flex-column gap-2">
+                      {displayUsers.slice(0, 5).map((user, idx) => (
+                        <div key={idx} className="p-2 bg-light rounded d-flex justify-content-between align-items-center">
+                          <div className="d-flex align-items-center">
+                            <div className={`${item.type === "event" ? "bg-primary" : "bg-success"} text-white rounded-circle d-flex align-items-center justify-content-center me-2`} style={{ width: "35px", height: "35px" }}>
+                              <i className="fa-solid fa-user"></i>
+                            </div>
+                            <div>
+                              <span className="fw-semibold d-block">{user.name}</span>
+                              <span className="text-muted small">{user.email}</span>
+                            </div>
+                          </div>
+                        </div>
+                      ))}
+                      {totalCount > 5 && (
+                        <span className="badge bg-secondary align-self-start">
+                          +{totalCount - 5} more people
+                        </span>
+                      )}
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       ) : (
         <div className="text-center mt-5">
-          <i className="fa-solid fa-user-slash fa-3x text-muted mb-3"></i>
-          <p className="text-muted">No registrations yet.</p>
+          <i className="fa-solid fa-calendar-xmark fa-3x text-muted mb-3"></i>
+          <p className="text-muted">No events or volunteer opportunities posted yet.</p>
+          <button 
+            className="btn btn-primary mt-2"
+            onClick={() => navigate("/post")}
+          >
+            Post Your First Item
+          </button>
         </div>
       );
     }

@@ -1,148 +1,430 @@
 /***********Log in***************/
 .log {
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 20px;
 }
 
 .log-box {
-    width: 40%;
+    width: 100%;
+    max-width: 450px;
     padding: 40px 30px;
     border-radius: 15px;
-    box-shadow: 0 0 10px rgba(83, 82, 82, 0.4);
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(83, 82, 82, 0.2);
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
 
 .log-head {
-    background: #3B82F6;
+    background: linear-gradient(135deg, #3B82F6 0%, #8B5CF6 100%);
     background-clip: text;
+    -webkit-background-clip: text;
     color: transparent;
-    font-size: 35px;
-    font-weight: bolder;
+    font-size: 42px;
+    font-weight: 800;
     text-align: center;
     padding: 0;
+    margin-bottom: 10px;
 }
 
 .log-head span {
-    background: #a29ef9;
+    background: linear-gradient(135deg, #a29ef9 0%, #c4b5fd 100%);
     background-clip: text;
+    -webkit-background-clip: text;
     color: transparent;
 }
 
 .log-body {
-    color: #6C63FF;
-    font-weight: bolder;
+    color: #8B5CF6;
+    font-weight: 600;
+}
+
+.log-body label {
+    font-size: 16px;
+    margin-bottom: 8px;
+    display: block;
 }
 
 .log-body input {
-  padding: 10px;
-  border-radius: 6px;
-  border: none;
-  outline: none;
+    padding: 12px 15px;
+    border-radius: 8px;
+    border: 2px solid #e5e7eb;
+    outline: none;
+    width: 100%;
+    font-size: 16px;
+    background: white;
+    transition: all 0.3s ease;
+}
+
+.log-body input:focus {
+    border-color: #8B5CF6;
+    box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1);
 }
 
 .log-body button {
-  background-color: #6C63FF;
-  font-weight: bolder;
-  color: white;
-  border: none;
-  padding: 10px;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: 0.5s ease;
+    background: linear-gradient(135deg, #8B5CF6 0%, #6366F1 100%);
+    font-weight: 700;
+    color: white;
+    border: none;
+    padding: 14px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    font-size: 18px;
+    margin-top: 10px;
+    box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
 }
 
 .log-body button:hover {
-  background-color: #10B981;
-} 
+    background: linear-gradient(135deg, #7C3AED 0%, #5B21B6 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(139, 92, 246, 0.4);
+}
 
-.signup a{
-  color: rgb(81, 116, 134);
-  font-size: 12px;
-  transition: 0.5s ease;
+.log-body button:active {
+    transform: translateY(0);
 }
+
+.form-title {
+    background: linear-gradient(135deg, #3B82F6 0%, #8B5CF6 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    font-size: 38px;
+    font-weight: 800;
+    text-align: center;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+.form-title span {
+    background: linear-gradient(135deg, #a29ef9 0%, #c4b5fd 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.signup {
+    justify-content: center;
+    align-items: center;
+}
+
+.signup a {
+    color: #3B82F6;
+    font-size: 14px;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+
 .signup a:hover {
-  color: #10B981;
+    color: #8B5CF6;
 }
-.signup span{
-  color: gray;
-  font-size: 12px;
+
+.signup span {
+    color: #6b7280;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* Responsive breakpoints */
+@media (max-width: 768px) {
+    .log-box {
+        max-width: 400px;
+        padding: 35px 25px;
+    }
+    
+    .log-head {
+        font-size: 36px;
+    }
+    
+    .form-title {
+        font-size: 34px;
+    }
+}
+
+@media (max-width: 576px) {
+    .log {
+        padding: 15px;
+    }
+    
+    .log-box {
+        max-width: 100%;
+        padding: 30px 20px;
+        gap: 15px;
+    }
+    
+    .log-head {
+        font-size: 32px;
+    }
+    
+    .form-title {
+        font-size: 30px;
+        margin-bottom: 15px;
+    }
+    
+    .log-body label {
+        font-size: 15px;
+    }
+    
+    .log-body input {
+        padding: 14px;
+        font-size: 16px;
+    }
+    
+    .log-body button {
+        padding: 15px;
+        font-size: 17px;
+    }
+    
+    .signup {
+        flex-direction: column !important;
+        gap: 5px;
+        text-align: center;
+    }
+    
+    .signup span {
+        margin-right: 0 !important;
+    }
+}
+
+@media (max-width: 400px) {
+    .log-box {
+        padding: 25px 15px;
+    }
+    
+    .log-head {
+        font-size: 28px;
+    }
+    
+    .form-title {
+        font-size: 26px;
+    }
 }
 
 /***********signup********************/
+/***********Sign Up***************/
 .sign {
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 3%;
+    padding: 20px;
 }
 
 .sign-box {
-    width: 40%;
+    width: 100%;
+    max-width: 500px;
     padding: 40px 30px;
     border-radius: 15px;
-    box-shadow: 0 0 10px rgba(83, 82, 82, 0.4);
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(83, 82, 82, 0.2);
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
 
 .sign-head {
-    background: #3B82F6;
+    background: linear-gradient(135deg, #3B82F6 0%, #8B5CF6 100%);
     background-clip: text;
+    -webkit-background-clip: text;
     color: transparent;
-    font-size: 35px;
-    font-weight: bolder;
+    font-size: 42px;
+    font-weight: 800;
     text-align: center;
     padding: 0;
+    margin-bottom: 10px;
 }
 
 .sign-head span {
-    background: #a29ef9;
+    background: linear-gradient(135deg, #a29ef9 0%, #c4b5fd 100%);
     background-clip: text;
+    -webkit-background-clip: text;
     color: transparent;
 }
 
 .sign-body {
-    color: #6C63FF;
-    font-weight: bolder;
+    color: #8B5CF6;
+    font-weight: 600;
+}
+
+.sign-body label {
+    font-size: 15px;
+    margin-bottom: 6px;
+    display: block;
 }
 
 .sign-body input {
-  padding: 10px;
-  border-radius: 6px;
-  border: none;
-  outline: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    border: 2px solid #e5e7eb;
+    outline: none;
+    width: 100%;
+    font-size: 15px;
+    background: white;
+    transition: all 0.3s ease;
+}
+
+.sign-body input:focus {
+    border-color: #8B5CF6;
+    box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1);
 }
 
 .sign-body button {
-  background-color: #6C63FF;
-  font-weight: bolder;
-  color: white;
-  border: none;
-  padding: 10px;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: 0.5s ease;
+    background: linear-gradient(135deg, #8B5CF6 0%, #6366F1 100%);
+    font-weight: 700;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    font-size: 17px;
+    margin-top: 5px;
+    box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
 }
 
 .sign-body button:hover {
-  background-color: #10B981;
-} 
+    background: linear-gradient(135deg, #7C3AED 0%, #5B21B6 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(139, 92, 246, 0.4);
+}
 
-.signup a{
-  color: rgb(81, 116, 134);
-  font-size: 12px;
-  transition: 0.5s ease;
+.sign-body button:active {
+    transform: translateY(0);
 }
+
+.form-title-signup {
+    background: linear-gradient(135deg, #3B82F6 0%, #8B5CF6 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    font-size: 38px;
+    font-weight: 800;
+    text-align: center;
+    padding: 0;
+    margin-bottom: 15px;
+}
+
+.form-title-signup span {
+    background: linear-gradient(135deg, #a29ef9 0%, #c4b5fd 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.signup {
+    justify-content: center;
+    align-items: center;
+}
+
+.signup a {
+    color: #3B82F6;
+    font-size: 14px;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+
 .signup a:hover {
-  color: #10B981;
+    color: #8B5CF6;
 }
-.signup span{
-  color: gray;
-  font-size: 12px;
+
+.signup span {
+    color: #6b7280;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* Checkbox styling */
+.sign-body .form-check-label {
+    font-size: 14px;
+    font-weight: 500;
+    color: #6b7280;
+}
+
+.sign-body .form-check-input:checked {
+    background-color: #8B5CF6;
+    border-color: #8B5CF6;
+}
+
+/* Responsive breakpoints */
+@media (max-width: 768px) {
+    .sign-box {
+        max-width: 450px;
+        padding: 35px 25px;
+    }
+    
+    .sign-head {
+        font-size: 36px;
+    }
+    
+    .form-title-signup {
+        font-size: 34px;
+    }
+}
+
+@media (max-width: 576px) {
+    .sign {
+        padding: 15px;
+    }
+    
+    .sign-box {
+        max-width: 100%;
+        padding: 30px 20px;
+        gap: 15px;
+    }
+    
+    .sign-head {
+        font-size: 32px;
+    }
+    
+    .form-title-signup {
+        font-size: 30px;
+        margin-bottom: 12px;
+    }
+    
+    .sign-body label {
+        font-size: 14px;
+    }
+    
+    .sign-body input {
+        padding: 12px;
+        font-size: 15px;
+    }
+    
+    .sign-body button {
+        padding: 13px;
+        font-size: 16px;
+    }
+    
+    .signup {
+        flex-direction: column !important;
+        gap: 5px;
+        text-align: center;
+    }
+    
+    .signup span {
+        margin-right: 0 !important;
+    }
+}
+
+@media (max-width: 400px) {
+    .sign-box {
+        padding: 25px 15px;
+    }
+    
+    .sign-head {
+        font-size: 28px;
+    }
+    
+    .form-title-signup {
+        font-size: 26px;
+    }
 }

@@ -1,6 +1,6 @@
 .hero-section {
   position: relative;
-  background: url("../assets/img/Selection\ \(4\).png") no-repeat center center/cover;
+  background: url("../../public/img/banner.png") no-repeat center center/cover;
   height: 60vh;
 }
 

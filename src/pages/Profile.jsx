@@ -1,4 +1,4 @@
-import ProfileHead from "../layout/ProfileHead";
+import ProfileHead from "../Layouts/ProfileHead";
 import { useEffect, useState } from "react";
 import AdminProfile from "../components/AdminProfile";
 import OrganizerProfile from "../components/OrganizerProfile";
