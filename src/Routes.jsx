@@ -1,4 +1,4 @@
-import EventDetails from "./pages/details";
+import EventDetails from "./pages/Details";
 import ContactPage from "./pages/Contact";
 import EventsPage from "./pages/Events";
 import HomePage from "./pages/Home";
