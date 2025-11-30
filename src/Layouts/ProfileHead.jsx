@@ -11,6 +11,11 @@ function ProfileHead() {
     phone: "",
     image: "",
   });
+  
+  // حقول الباسورد
+  const [oldPassword, setOldPassword] = useState("");
+  const [newPassword, setNewPassword] = useState("");
+  const [confirmNewPassword, setConfirmNewPassword] = useState("");
 
   useEffect(() => {
     const currentUser = JSON.parse(localStorage.getItem("currentUser"));
@@ -26,7 +31,7 @@ function ProfileHead() {
     if (file) {
       const reader = new FileReader();
       reader.onloadend = () => {
-        setFormData({ ...formData, image: reader.result }); // نخزن الصورة كـ Base64
+        setFormData({ ...formData, image: reader.result });
       };
       reader.readAsDataURL(file);
     }
@@ -36,19 +41,58 @@ function ProfileHead() {
   const handleSave = () => {
     // جلب كل المستخدمين
     const users = JSON.parse(localStorage.getItem("users")) || [];
+    
+    let updatedFormData = { ...formData };
 
-    // تحديث بيانات المستخدم الحالي بالصورة الجديدة
+    // التحقق من تغيير الباسورد
+    if (oldPassword || newPassword || confirmNewPassword) {
+      // التأكد من إدخال الحقول الثلاثة
+      if (!oldPassword || !newPassword || !confirmNewPassword) {
+        alert("Please fill all password fields!");
+        return;
+      }
+
+      // التحقق من الباسورد القديم
+      if (oldPassword !== userData.password) {
+        alert("Old password is incorrect!");
+        return;
+      }
+
+      // التحقق من تطابق الباسورد الجديد
+      if (newPassword !== confirmNewPassword) {
+        alert("New passwords do not match!");
+        return;
+      }
+
+      // التحقق من طول الباسورد الجديد
+      if (newPassword.length < 6) {
+        alert("New password must be at least 6 characters!");
+        return;
+      }
+
+      // تحديث الباسورد
+      updatedFormData.password = newPassword;
+    }
+
+    // تحديث بيانات المستخدم
     const updatedUsers = users.map((user) =>
-      user.id === formData.id ? formData : user
+      user.id === updatedFormData.id ? updatedFormData : user
     );
 
     // تخزينهم مرة تانية
     localStorage.setItem("users", JSON.stringify(updatedUsers));
 
     // تحديث currentUser
-    localStorage.setItem("currentUser", JSON.stringify(formData));
-    setUserData(formData);
+    localStorage.setItem("currentUser", JSON.stringify(updatedFormData));
+    setUserData(updatedFormData);
+    
+    // إعادة تعيين حقول الباسورد
+    setOldPassword("");
+    setNewPassword("");
+    setConfirmNewPassword("");
+    
     setShowModal(false);
+    alert("Profile updated successfully! ✅");
   };
 
   if (!userData) {
@@ -130,6 +174,41 @@ function ProfileHead() {
                 }
               />
             </Form.Group>
+
+            <hr className="my-4" />
+            <h6 className="mb-3">Change Password (Optional)</h6>
+
+            <Form.Group className="mb-3">
+              <Form.Label>Old Password</Form.Label>
+              <Form.Control
+                type="password"
+                placeholder="Enter old password"
+                value={oldPassword}
+                onChange={(e) => setOldPassword(e.target.value)}
+              />
+            </Form.Group>
+
+            <Form.Group className="mb-3">
+              <Form.Label>New Password</Form.Label>
+              <Form.Control
+                type="password"
+                placeholder="Enter new password (min 6 characters)"
+                value={newPassword}
+                onChange={(e) => setNewPassword(e.target.value)}
+              />
+            </Form.Group>
+
+            <Form.Group className="mb-3">
+              <Form.Label>Confirm New Password</Form.Label>
+              <Form.Control
+                type="password"
+                placeholder="Re-enter new password"
+                value={confirmNewPassword}
+                onChange={(e) => setConfirmNewPassword(e.target.value)}
+              />
+            </Form.Group>
+
+            <hr className="my-4" />
 
             <Form.Group className="mb-3">
               <Form.Label>Profile Image</Form.Label>
