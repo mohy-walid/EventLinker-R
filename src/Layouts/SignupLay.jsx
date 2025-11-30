@@ -11,21 +11,6 @@ function SignupLayout() {
   const [confirmPassword, setConfirmPassword] = useState("");
   const navigate = useNavigate();
 
-  // Function to determine role based on email domain
-  const getRoleFromEmail = (email) => {
-    const domain = email.split("@")[1]?.toLowerCase();
-    
-    // Map domains to roles
-    const domainRoleMap = {
-      "organizer.com": "organizer",
-      "admin.com": "admin",
-      "superadmin.com": "superadmin",
-    };
-
-    // Return role based on domain, default to "user"
-    return domainRoleMap[domain] || "user";
-  };
-
   const handleSubmit = (event) => {
     event.preventDefault();
     const form = event.currentTarget;
@@ -48,22 +33,19 @@ function SignupLayout() {
       return;
     }
 
-    // Determine role from email domain
-    const userRole = getRoleFromEmail(email);
-
     const newUser = {
       id: Math.floor(Math.random() * 1000000000),
       name: fullName,
       email,
       phone,
       password,
-      role: userRole,
+      role: "user",
     };
 
     users.push(newUser);
     localStorage.setItem("users", JSON.stringify(users));
 
-    alert(`Account created successfully 🎉 Your role: ${userRole}. Please login now!`);
+    alert("Account created successfully 🎉 Please login now!");
     navigate("/");
   };
 
@@ -95,9 +77,6 @@ function SignupLayout() {
         <Form.Control.Feedback type="invalid">
           Please enter a valid email.
         </Form.Control.Feedback>
-        <Form.Text className="text-muted">
-          Use @organizer.com, @admin.com, or @superadmin.com for special roles
-        </Form.Text>
       </Form.Group>
 
       <Form.Group controlId="validationCustomPhone" className="mb-3">
