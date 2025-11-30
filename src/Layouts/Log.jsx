@@ -1,7 +1,6 @@
 import { useState } from "react";
 import Form from "react-bootstrap/Form";
 import { useNavigate } from "react-router-dom";
-import AdminCredentials from "../components/AdminCredentials";
 
 function LogLayout() {
   const [validated, setValidated] = useState(false);
@@ -51,7 +50,6 @@ function LogLayout() {
 
   return (
     <>
-      <AdminCredentials />
       <Form noValidate validated={validated} onSubmit={handleSubmit}>
         <Form.Group controlId="validationCustom01" className="mb-4">
           <Form.Label>Email :</Form.Label>

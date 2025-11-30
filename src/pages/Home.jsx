@@ -60,7 +60,7 @@ function HomePage() {
         <main>
           <section className="py-5">
             <div className="container">
-              <h2 className="text-center mb-4 fs-1 fw-bold">Upcoming Events</h2>
+              <h2 className="text-center mb-4 fs-1 fw-bold text-primary">Upcoming Events</h2>
               <div className="row g-4">
                 {[
                   {
@@ -127,7 +127,7 @@ function HomePage() {
 
           {/* ---------- Testimonials ---------- */}
           <section className="container py-5">
-            <h2 className="text-center mb-4 fs-1 fw-bold">
+            <h2 className="text-center text-dark mb-4 fs-1 fw-bold">
               What Our Community Says
             </h2>
 
@@ -204,8 +204,8 @@ function HomePage() {
           {/* ---------- Stay Connected ---------- */}
           <section className="py-5 text-center">
             <div className="container">
-              <h2 className="mb-4 fs-1 fw-bold">Stay Connected</h2>
-              <p>
+              <h2 className="mb-4 fs-1 fw-bold text-primary">Stay Connected</h2>
+              <p className="text-dark">
                 Don't miss out on the latest events and volunteering
                 opportunities. Sign up for our newsletter today!
               </p>
