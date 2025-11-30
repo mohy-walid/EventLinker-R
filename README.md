@@ -11,25 +11,22 @@ It also supports volunteering opportunities, posting new events, and contacting 
   - [Table of Contents](#table-of-contents)
   - [Key Features](#key-features)
     - [Feature 1: Homepage](#feature-1-homepage)
-      - [Feature 1 Live Design Preview](#feature-1-live-design-preview)
-    - [Feature 2: Volunteering Page](#feature-2-volunteering-page)
-      - [Feature 2 Live Design Preview](#feature-2-live-design-preview)
-    - [Feature 3: Event Details](#feature-3-event-details)
-      - [Feature 3 Live Design Preview](#feature-3-live-design-preview)
-    - [Feature 4: Post Event](#feature-4-post-event)
-      - [Feature 4 Live Design Preview](#feature-4-live-design-preview)
-    - [Feature 5: Contact Us](#feature-5-contact-us)
-      - [Feature 5 Live Design Preview](#feature-5-live-design-preview)
-    - [Feature 6: Events Page](#feature-6-events-page)
-      - [Feature 6 Live Design Preview](#feature-6-live-design-preview)
-    - [Feature 7: Profile Page](#feature-7-profile-page)
-      - [Feature 7 Live Design Preview](#feature-7-live-design-preview)
-    - [Feature 8: Navbar & Footer](#feature-8-navbar--footer)
-      - [Feature 8 Live Design Preview](#feature-8-live-design-preview)
-    - [Feature 9: Form Page](#feature-9-form-page)
-      - [Feature 9 Live Design Preview](#feature-9-live-design-preview)
+    - [Feature 2: Sign In Page](#feature-2-sign-in-page)
+    - [Feature 3: Sign Up Page](#feature-3-sign-up-page)
+    - [Feature 4: Events Page](#feature-4-events-page)  
+    - [Feature 5: Volunteering Page](#feature-5-volunteering-page)
+    - [Feature 6: Event Details](#feature-6-event-details)
+    - [Feature 7: Post Event](#feature-7-post-event)
+    - [Feature 8: Contact Us](#feature-8-contact-us)
+    - [Feature 9: Profile Page](#feature-9-profile-page)  
+  - [User Roles & Permissions](#user-roles--permissions)
+  - [Technologies Used](#technologies-used)
+  - [Installation Guide](#installation-guide)
+  - [Role-Based Email System](#role-based-email-system)
+  - [Profile Management](#profile-management)
   - [System Requirements](#system-requirements)
   - [For Registered Users](#for-registered-users)
+  - [Security Notes](#security-notes)
 
 ---
 
@@ -38,8 +35,10 @@ It also supports volunteering opportunities, posting new events, and contacting 
 ### Feature 1: Homepage
 
 #### Feature 1 Live Design Preview
-![Homepage Screenshot](./img/home.jpg)  
+![Homepage Screenshot](./src/images/home.png)  
 *Fig 1.1 - Homepage showcasing featured events and navigation*
+
+---
 
 **Description:**  
 - Main landing page of the Website.  
@@ -53,11 +52,83 @@ It also supports volunteering opportunities, posting new events, and contacting 
 
 ---
 
-### Feature 2: Volunteering Page
+### Feature 2: Sign In Page
 
 #### Feature 2 Live Design Preview
-![Volunteering Screenshot](./img/Volunteering.jpg)  
-*Fig 2.1 - Volunteering opportunities listing*
+![Sign In Screenshot](./src/images/signin.png)  
+*Fig 2.1 - User login page with secure authentication*
+
+---
+
+**Description:**  
+- Secure login page for registered users.
+- Validates user credentials and provides access based on assigned role.
+- Simple and clean interface for quick access.
+
+**Key Functionalities:**
+- Email and password authentication
+- Form validation
+- Remember me option
+- Redirect to signup page for new users
+- Role-based dashboard redirect after login
+- Error handling for incorrect credentials
+
+---
+
+### Feature 3: Sign Up Page
+
+#### Feature 3 Live Design Preview
+![Sign Up Screenshot](./src/images/signup.png)  
+*Fig 3.1 - User registration form with role assignment*
+
+---
+
+**Description:**  
+- Registration page for new users to create an account.
+- Automatic role assignment based on email domain.
+- Comprehensive form validation to ensure data quality.
+
+**Key Functionalities:**
+- Full name, email, phone, and password input
+- Password confirmation matching
+- Email domain-based role assignment (User, Organizer, Admin, Super Admin)
+- Phone number validation (7-15 digits)
+- Password strength requirement (minimum 6 characters)
+- Duplicate email detection
+- Redirect to login after successful registration
+
+---
+
+### Feature 4: Events Page
+
+#### Feature 4 Live Design Preview
+![Events Screenshot](./src/images/events.png)  
+*Fig 4.1 - Events listing page with filters and categories*
+
+---
+
+**Description:**  
+- A dedicated page for browsing all events on the platform.
+- Users can search and filter events based on categories, dates, or locations.
+
+**Key Functionalities:**
+- Display events in a clean, card-based layout
+- Filter by event type (conference, workshop, exhibition, etc.)
+- Filter by date and location
+- Keyword-based search bar
+- Save events as favorites (bookmark)
+- "Visit Now" button to navigate to event details
+- Responsive grid layout for different screen sizes
+
+---
+
+### Feature 5: Volunteering Page
+
+#### Feature 5 Live Design Preview
+![Volunteering Screenshot](./src/images/volunteer.png)  
+*Fig 5.1 - Volunteering opportunities listing*
+
+---
 
 **Description:**  
 - Dedicated page for volunteering opportunities.  
@@ -70,11 +141,13 @@ It also supports volunteering opportunities, posting new events, and contacting 
 
 ---
 
-### Feature 3: Event Details
+### Feature 6: Event Details
 
-#### Feature 3 Live Design Preview
+#### Feature 6 Live Design Preview
 ![Event Details Screenshot](./img/eventdetails.png)  
-*Fig 3.1 - Full event details page with description and registration options*
+*Fig 6.1 - Full event details page with description and registration options*
+
+---
 
 **Description:**  
 - Provides complete details of a selected event.  
@@ -87,11 +160,13 @@ It also supports volunteering opportunities, posting new events, and contacting 
 
 ---
 
-### Feature 4: Post Event
+### Feature 7: Post Event
 
-#### Feature 4 Live Design Preview
+#### Feature 7 Live Design Preview
 ![Post Event Screenshot](./img/post.png)  
-*Fig 4.1 - Add new event post form*
+*Fig 7.1 - Add new event post form*
+
+---
 
 **Description:**  
 - Allows users or admins to add new event posts.  
@@ -104,11 +179,13 @@ It also supports volunteering opportunities, posting new events, and contacting 
 
 ---
 
-### Feature 5: Contact Us
+### Feature 8: Contact Us
 
-#### Feature 5 Live Design Preview
+#### Feature 8 Live Design Preview
 ![Contact Us Screenshot](./img/contact.png)  
-*Fig 5.1 - Contact form for inquiries and support*
+*Fig 8.1 - Contact form for inquiries and support*
+
+---
 
 **Description:**  
 - A simple page to let users contact the team for support or questions.  
@@ -121,94 +198,442 @@ It also supports volunteering opportunities, posting new events, and contacting 
 
 ---
 
-### Feature 6: Events Page
+### Feature 9: Profile Page
 
-#### Feature 6 Live Design Preview
-![Events Screenshot](./img/events.png)  
-*Fig 6.1 - Events listing page with filters and categories*
+#### Feature 9 Live Design Preview
 
-**Description:**  
-- A dedicated page for browsing all events on the platform.  
-- Users can search and filter events based on categories, dates, or locations.
+**User Profile:**
+![User Profile Screenshot](./img/profile-user.png)  
+*Fig 9.1 - User profile with basic access and event tracking*
 
-**Key Functionalities:**
-- Display events in a clean, card-based layout.
-- Filter by event type (conference, workshop, exhibition, etc.).
-- Filter by date and location.
-- Keyword-based search bar.
-- Save events as favorites (bookmark).
-- “Visit Now” button to navigate to event details.
+**Organizer Profile:**
+![Organizer Profile Screenshot](./img/profile-organizer.png)  
+*Fig 9.2 - Organizer profile with event management capabilities*
+
+**Admin Profile:**
+![Admin Profile Screenshot](./img/profile-admin.png)  
+*Fig 9.3 - Admin profile with platform moderation tools*
+
+**Super Admin Profile:**
+![Super Admin Profile Screenshot](./img/profile-superadmin.png)  
+*Fig 9.4 - Super Admin profile with full system control*
 
 ---
-
-### Feature 7: Profile Page
-
-#### Feature 7 Live Design Preview
-![Profile Screenshot](./img/profile.png)  
-*Fig 7.1 - User profile page with personal info and event tracking*
 
 **Description:**  
 - A personal page for each registered user that shows their basic details, activities on the platform, and the events they have registered for.
+- Profile interface adapts based on user role, showing relevant tools and permissions.
 
 **Key Functionalities:**
-- Display profile information (name, email, photo, phone number)
+- Display profile information (name, email, photo, phone number, role)
 - Sidebar navigation (Dashboard – My Events – Registered Events – Volunteering – Notifications – Settings)
-- Manage user’s own events (edit/delete)
+- Role-specific dashboard content
+- Manage user's own events (edit/delete)
 - Cancel event registrations
 - Track volunteering opportunities (Active – Pending – Withdrawn)
-- Edit profile details
+- **Edit profile details** (name, email, phone)
+- **Upload and manage profile picture**
+- **Change password securely** with old password verification
 - Logout from account
 
----
+**Role-Specific Features:**
 
-### Feature 8: Navbar & Footer
-
-#### Feature 8 Live Design Preview
-![Navbar Footer Screenshot](./img/navbar-footer.png)  
-*Fig 8.1 - Global navigation and footer sections*
-
-**Description:**  
-- Persistent navigation bar and footer across all pages.  
-- Ensures consistent UI/UX and easy access to key pages.
-
-**Key Functionalities:**
-- Navigate to homepage, events, volunteering, profile, contact
-- Responsive design for mobile and desktop
-- Footer contains social links, contact info, and copyright
+| Feature | User | Organizer | Admin | Super Admin |
+|---------|------|-----------|-------|-------------|
+| View Profile | ✅ | ✅ | ✅ | ✅ |
+| Edit Profile | ✅ | ✅ | ✅ | ✅ |
+| Change Password | ✅ | ✅ | ✅ | ✅ |
+| My Events | ❌ | ✅ | ✅ | ✅ |
+| Create Events | ❌ | ✅ | ✅ | ✅ |
+| Moderate Content | ❌ | ❌ | ✅ | ✅ |
+| Manage Users | ❌ | ❌ | ✅ | ✅ |
+| System Settings | ❌ | ❌ | ❌ | ✅ |
 
 ---
 
-### Feature 9: Form Page
+## User Roles & Permissions
 
-#### Feature 9 Live Design Preview
-![Form Screenshot](./img/form.png)  
-*Fig 9.1 - Sample form page for event submission or contact*
+EventLinker supports **4 distinct user roles**, each with specific permissions and access levels. Roles are automatically assigned based on the email domain used during registration.
 
-**Description:**  
-- General-purpose form page used for various submissions.  
-- Supports validation and structured input from users.
+| Role | Email Domain | Access Level | Permissions |
+|------|-------------|--------------|-------------|
+| **User** | Any domain (default) | Basic | Browse events, register for events, volunteer, save favorites |
+| **Organizer** | @organizer.com | Event Management | All User permissions + Create/Edit/Delete own events, manage event registrations |
+| **Admin** | @admin.com | Platform Management | All Organizer permissions + Moderate content, manage users, review reports |
+| **Super Admin** | @superadmin.com | Full Control | All permissions + System settings, user role management, platform configuration |
 
-**Key Functionalities:**
-- Input fields with validation
-- Submit and reset buttons
-- User-friendly design
+### Example Accounts by Role:
+
+```
+User Role:
+- john@gmail.com
+- sara@yahoo.com
+- ahmed@outlook.com
+
+Organizer Role:
+- events@organizer.com
+- culture@organizer.com
+- youth@organizer.com
+
+Admin Role:
+- support@admin.com
+- moderator@admin.com
+- team@admin.com
+
+Super Admin Role:
+- boss@superadmin.com
+- root@superadmin.com
+- owner@superadmin.com
+```
+
+---
+
+## Technologies Used
+
+### Frontend
+- **React 18** - JavaScript library for building user interfaces
+- **React Bootstrap** - UI component library
+- **React Router DOM** - Navigation and routing
+- **Font Awesome** - Icon library
+
+### Storage & Data
+- **LocalStorage API** - Client-side data persistence
+
+### Styling
+- **CSS3** - Custom styling
+- **Bootstrap 5** - Responsive grid system and components
+
+---
+
+## Installation Guide
+
+### Prerequisites
+- Node.js (v14 or higher)
+- npm or yarn package manager
+- Modern web browser
+
+### Installation Steps
+
+1. **Clone the repository**
+```bash
+git clone <repository-url>
+cd eventlinker
+```
+
+2. **Install dependencies**
+```bash
+npm install
+```
+
+3. **Install required packages**
+```bash
+npm install react-bootstrap bootstrap
+npm install react-router-dom
+npm install @fortawesome/fontawesome-free
+```
+
+4. **Start the development server**
+```bash
+npm start
+```
+
+5. **Open in browser**
+```
+http://localhost:3000
+```
+
+The application will automatically open in your default browser.
+
+---
+
+## Role-Based Email System
+
+### How It Works
+
+The system automatically assigns user roles based on the email domain entered during signup:
+
+```javascript
+// Domain to Role Mapping
+const domainRoleMap = {
+  "organizer.com": "organizer",
+  "admin.com": "admin",
+  "superadmin.com": "superadmin",
+  // Any other domain defaults to "user"
+};
+```
+
+### Choosing Your Role During Signup
+
+When creating an account, **use the appropriate email domain** to get the desired role:
+
+#### For Regular User Access:
+Use any common email provider:
+- `yourname@gmail.com`
+- `yourname@yahoo.com`
+- `yourname@outlook.com`
+
+#### For Organizer Access:
+Use the organizer domain:
+- `yourname@organizer.com`
+- `events@organizer.com`
+
+#### For Admin Access:
+Use the admin domain:
+- `yourname@admin.com`
+- `support@admin.com`
+
+#### For Super Admin Access:
+Use the superadmin domain:
+- `yourname@superadmin.com`
+- `boss@superadmin.com`
+
+### Adding Custom Domains
+
+To add more email domains for role assignment, edit the `getRoleFromEmail()` function in `SignupLayout.jsx`:
+
+```javascript
+const domainRoleMap = {
+  "organizer.com": "organizer",
+  "admin.com": "admin",
+  "superadmin.com": "superadmin",
+  "custom-domain.com": "organizer", // Add your custom domain here
+};
+```
+
+---
+
+## Profile Management
+
+### Viewing Your Profile
+
+1. Log in to your account
+2. Navigate to the Profile page from the navigation menu
+3. View your personal information, role, and activity
+
+### Editing Profile Information
+
+Users can update the following information:
+
+#### Basic Information:
+- **Full Name** - Update your display name
+- **Email Address** - Change your email (role will be reassigned based on new domain)
+- **Phone Number** - Update contact information
+- **Profile Picture** - Upload a custom profile image
+
+#### Password Management:
+To change your password:
+
+1. Click "Edit Profile" button
+2. Scroll to "Change Password" section
+3. Enter the following:
+   - **Old Password** - Your current password for verification
+   - **New Password** - Must be at least 6 characters
+   - **Confirm New Password** - Re-enter new password for confirmation
+4. Click "Save Changes"
+
+#### Security Validations:
+- ✅ Old password must match current password
+- ✅ New password must be at least 6 characters
+- ✅ New password must match confirmation
+- ✅ All password fields are optional (skip if not changing password)
+
+### Profile Picture Management
+
+#### Uploading a Profile Picture:
+1. Click "Edit Profile"
+2. Under "Profile Image", click "Choose File"
+3. Select an image (JPG, PNG, GIF)
+4. Preview will appear immediately
+5. Click "Save Changes" to confirm
+
+#### Removing Profile Picture:
+1. Click "Edit Profile"
+2. If you have a custom image, click "Remove Image" button
+3. Default avatar will be restored
+4. Click "Save Changes"
+
+**Note**: Images are stored as Base64 in localStorage for demonstration purposes.
 
 ---
 
 ## System Requirements
 
 - Modern web browser (Chrome, Firefox, Edge, Safari)
+- JavaScript enabled
 - Stable internet connection
-- Node.js and npm installed (for local development)
-- Internet access for API and library calls
+- Minimum 4GB RAM recommended
+- Screen resolution: 1280x720 or higher for optimal experience
 
 ---
 
-# For Registered Users
+## For Registered Users
 
-## By creating an account, users can:
+### By creating an account, users can:
 
-- Post new events and manage their own content.
-- Register as volunteers and track their participation.
-- Save favorite events for later.
-- Access their event history and manage registrations.
+✅ **Post Events** - Create and share new events with the community
+
+✅ **Manage Events** - Edit or delete your own posted events
+
+✅ **Register for Events** - Sign up to attend events that interest you
+
+✅ **Volunteer** - Apply for volunteering opportunities and track your participation status
+
+✅ **Save Favorites** - Bookmark events to view later
+
+✅ **Track History** - View all events you've registered for or created
+
+✅ **Profile Customization** - Upload profile picture and manage personal information
+
+✅ **Secure Account** - Change password and maintain account security
+
+✅ **Role-Based Access** - Automatic permissions based on email domain
+
+---
+
+## Security Notes
+
+⚠️ **Important Security Information**
+
+This application currently uses **localStorage** for data persistence, which is suitable for demonstration and development purposes only.
+
+### For Production Deployment:
+
+**Required Security Implementations:**
+- ✅ Implement proper backend API with database
+- ✅ Use secure authentication (JWT tokens)
+- ✅ Hash passwords using bcrypt or similar
+- ✅ Implement HTTPS/SSL certificates
+- ✅ Add input sanitization and validation
+- ✅ Implement rate limiting to prevent abuse
+- ✅ Add CSRF protection
+- ✅ Secure file upload validation
+- ✅ Implement proper session management
+- ✅ Add email verification for new accounts
+
+**Current Limitations:**
+- Data stored in browser (not persistent across devices)
+- Passwords stored in plain text (for demo only)
+- No server-side validation
+- No email verification system
+
+---
+
+## Project Structure
+
+```
+eventlinker/
+├── src/
+│   ├── components/
+│   │   ├── AdminProfile.jsx
+│   │   ├── OrganizerProfile.jsx
+│   │   ├── SuperAdminProfile.jsx
+│   │   └── UserProfile.jsx
+│   ├── Layouts/
+│   │   ├── SignupLayout.jsx
+│   │   ├── LoginLayout.jsx
+│   │   └── ProfileHead.jsx
+│   ├── pages/
+│   │   ├── HomePage.jsx
+│   │   ├── EventsPage.jsx
+│   │   ├── ProfilePage.jsx
+│   │   ├── VolunteeringPage.jsx
+│   │   ├── ContactPage.jsx
+│   │   └── PostEventPage.jsx
+│   ├── assets/
+│   │   └── img/
+│   │       ├── home.jpg
+│   │       ├── signin.png
+│   │       ├── signup.png
+│   │       ├── events.png
+│   │       ├── Volunteering.jpg
+│   │       ├── eventdetails.png
+│   │       ├── post.png
+│   │       ├── contact.png
+│   │       ├── profile-user.png
+│   │       ├── profile-organizer.png
+│   │       ├── profile-admin.png
+│   │       ├── profile-superadmin.png
+│   │       └── User.png
+│   ├── App.js
+│   ├── App.css
+│   └── index.js
+├── public/
+│   └── index.html
+├── package.json
+└── README.md
+```
+
+---
+
+## Contributing
+
+We welcome contributions to EventLinker! Here's how you can help:
+
+### How to Contribute:
+
+1. **Fork the Repository**
+```bash
+git clone https://github.com/yourusername/eventlinker.git
+```
+
+2. **Create a Feature Branch**
+```bash
+git checkout -b feature/AmazingFeature
+```
+
+3. **Make Your Changes**
+- Write clean, commented code
+- Follow existing code style
+- Test thoroughly
+
+4. **Commit Your Changes**
+```bash
+git commit -m 'Add some AmazingFeature'
+```
+
+5. **Push to Branch**
+```bash
+git push origin feature/AmazingFeature
+```
+
+6. **Open a Pull Request**
+- Describe your changes clearly
+- Reference any related issues
+
+---
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+---
+
+## Contact & Support
+
+### Need Help?
+
+- 📧 **Email**: support@eventlinker.com
+- 🐛 **Report Issues**: [GitHub Issues](https://github.com/yourusername/eventlinker/issues)
+- 💬 **Discussions**: [GitHub Discussions](https://github.com/yourusername/eventlinker/discussions)
+
+### Follow Us:
+
+- 🌐 **Website**: www.eventlinker.com
+- 📱 **Facebook**: @EventLinker
+- 📷 **Instagram**: @EventLinker
+- 🐦 **Twitter**: @EventLinker
+
+---
+
+## Acknowledgments
+
+- React team for the amazing framework
+- Bootstrap team for the UI components
+- Font Awesome for the icon library
+- All contributors who helped improve EventLinker
+
+---
+
+**Made with ❤️ by the EventLinker Team**
+
+*Connecting youth with cultural experiences, one event at a time.*
