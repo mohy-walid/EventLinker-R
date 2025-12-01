@@ -1,4 +1,4 @@
-# 📌 EventLinker
+# EventLinker
 
 EventLinker is a youth & cultural events platform that allows users to discover, join, and share events.  
 It also supports volunteering opportunities, posting new events, and contacting the organizers directly.
@@ -144,7 +144,7 @@ It also supports volunteering opportunities, posting new events, and contacting 
 ### Feature 6: Event Details
 
 #### Feature 6 Live Design Preview
-![Event Details Screenshot](./img/eventdetails.png)  
+![Event Details Screenshot](./src/images/details.png)  
 *Fig 6.1 - Full event details page with description and registration options*
 
 ---
@@ -163,7 +163,7 @@ It also supports volunteering opportunities, posting new events, and contacting 
 ### Feature 7: Post Event
 
 #### Feature 7 Live Design Preview
-![Post Event Screenshot](./img/post.png)  
+![Post Event Screenshot](./src/images/post.png)  
 *Fig 7.1 - Add new event post form*
 
 ---
@@ -182,7 +182,7 @@ It also supports volunteering opportunities, posting new events, and contacting 
 ### Feature 8: Contact Us
 
 #### Feature 8 Live Design Preview
-![Contact Us Screenshot](./img/contact.png)  
+![Contact Us Screenshot](./src/images/contact.png)  
 *Fig 8.1 - Contact form for inquiries and support*
 
 ---
@@ -203,19 +203,19 @@ It also supports volunteering opportunities, posting new events, and contacting 
 #### Feature 9 Live Design Preview
 
 **User Profile:**
-![User Profile Screenshot](./img/profile-user.png)  
+![User Profile Screenshot](./src/images/userprofile.png)  
 *Fig 9.1 - User profile with basic access and event tracking*
 
 **Organizer Profile:**
-![Organizer Profile Screenshot](./img/profile-organizer.png)  
+![Organizer Profile Screenshot](./src/images/organizer.png)  
 *Fig 9.2 - Organizer profile with event management capabilities*
 
 **Admin Profile:**
-![Admin Profile Screenshot](./img/profile-admin.png)  
+![Admin Profile Screenshot](./src/images/adminprofile.png)  
 *Fig 9.3 - Admin profile with platform moderation tools*
 
 **Super Admin Profile:**
-![Super Admin Profile Screenshot](./img/profile-superadmin.png)  
+![Super Admin Profile Screenshot](./src/images/superadmin.png)  
 *Fig 9.4 - Super Admin profile with full system control*
 
 ---
