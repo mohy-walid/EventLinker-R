@@ -24,8 +24,7 @@ It also supports volunteering opportunities, posting new events, and contacting 
   - [Installation Guide](#installation-guide)
   - [Role-Based Email System](#role-based-email-system)
   - [Profile Management](#profile-management)
-  - [For Registered Users](#for-registered-users)
-  - [Security Notes](#security-notes)
+
 
 ---
 
