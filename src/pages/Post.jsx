@@ -5,15 +5,12 @@ const PostEventPage = () => {
   const location = useLocation();
   const navigate = useNavigate();
   
-  // Check if we're in edit mode
   const mode = location.state?.mode || "create";
   const editData = location.state?.data || null;
   const initialType = location.state?.type || "event";
 
-  // Toggle between event and volunteer
   const [postType, setPostType] = useState(initialType);
 
-  // Form state
   const [formData, setFormData] = useState({
     title: "",
     category: "",
@@ -28,7 +25,6 @@ const PostEventPage = () => {
 
   const [imagePreview, setImagePreview] = useState(null);
 
-  // Load data if editing
   useEffect(() => {
     if (mode === "edit" && editData) {
       setFormData({
@@ -48,7 +44,6 @@ const PostEventPage = () => {
     }
   }, [mode, editData]);
 
-  // Reset form when switching types (only in create mode)
   const handleTypeChange = (type) => {
     if (mode === "create") {
       setPostType(type);
@@ -67,12 +62,10 @@ const PostEventPage = () => {
     }
   };
 
-  // Get user key helper
   const getUserKey = (baseKey, userId) => {
     return `${baseKey}_${userId}`;
   };
 
-  // Handle input changes
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData(prev => ({
@@ -81,7 +74,6 @@ const PostEventPage = () => {
     }));
   };
 
-  // Handle image upload
   const handleImageUpload = (e) => {
     const file = e.target.files[0];
     if (file) {
@@ -97,14 +89,12 @@ const PostEventPage = () => {
     }
   };
 
-  // Handle form submission
   const handleSubmit = (e) => {
     e.preventDefault();
 
     console.log("Form submitted with type:", postType);
     console.log("Form data:", formData);
 
-    // Validation
     if (!formData.title || !formData.category || !formData.date) {
       alert("Please fill in all required fields!");
       return;
@@ -118,7 +108,6 @@ const PostEventPage = () => {
 
     console.log("Current user:", currentUser);
 
-    // Prepare the item object
     const itemData = {
       id: mode === "edit" ? editData.id : Date.now(),
       title: formData.title,
@@ -134,36 +123,29 @@ const PostEventPage = () => {
       organizerName: currentUser.name
     };
 
-    // Determine storage key
     const storageKey = postType === "event" 
       ? getUserKey("postedEvents", currentUser.id)
       : getUserKey("postedVolunteers", currentUser.id);
 
-    // Get existing items
     const existingItems = JSON.parse(localStorage.getItem(storageKey)) || [];
 
     if (mode === "edit") {
-      // Update existing item
       const updatedItems = existingItems.map(item => 
         item.id === editData.id ? itemData : item
       );
       localStorage.setItem(storageKey, JSON.stringify(updatedItems));
       
-      // Trigger custom event to notify profile page
       window.dispatchEvent(new Event('dataUpdated'));
       
       alert(`${postType === "event" ? "Event" : "Volunteer opportunity"} updated successfully! ✅`);
     } else {
-      // Add new item
       existingItems.push(itemData);
       localStorage.setItem(storageKey, JSON.stringify(existingItems));
       
-      // Trigger custom event to notify profile page
       window.dispatchEvent(new Event('dataUpdated'));
       
       alert(`${postType === "event" ? "Event" : "Volunteer opportunity"} posted successfully! ✅`);
       
-      // Reset form after successful post
       setFormData({
         title: "",
         category: "",
@@ -178,7 +160,6 @@ const PostEventPage = () => {
       setImagePreview(null);
     }
 
-    // Navigate back to organizer profile
     navigate("/profile");
   };
 
@@ -188,7 +169,6 @@ const PostEventPage = () => {
         className="container bg-white shadow-lg rounded fade-in-up p-0"
         style={{ maxWidth: "900px" }}
       >
-        {/* Header with Type Toggle */}
         <div className="p-4 border-bottom fade-in">
           <div className="d-flex justify-content-between align-items-center mb-3">
             <div>
@@ -210,7 +190,6 @@ const PostEventPage = () => {
             </button>
           </div>
 
-          {/* Type Selector - Only show in create mode */}
           {mode === "create" && (
             <div className="d-flex justify-content-center">
               <div className="btn-group" role="group">
@@ -236,7 +215,6 @@ const PostEventPage = () => {
         </div>
 
         <form className="p-4" onSubmit={handleSubmit}>
-          {/* Title + Category */}
           <div className="row g-4">
             <div className="col-md-6 fade-in-up">
               <label className="form-label">
@@ -286,7 +264,6 @@ const PostEventPage = () => {
             </div>
           </div>
 
-          {/* Organization (for volunteers only) */}
           {postType === "volunteer" && (
             <div className="fade-in-up mt-4" style={{ animationDelay: "0.3s" }}>
               <label className="form-label">Organization Name</label>
@@ -301,7 +278,6 @@ const PostEventPage = () => {
             </div>
           )}
 
-          {/* Date + Time */}
           <div className="row g-4 mt-3">
             <div
               className="col-md-6 fade-in-up"
@@ -332,7 +308,6 @@ const PostEventPage = () => {
             </div>
           </div>
 
-          {/* Location Details */}
           <div
             className="fade-in-up mt-4"
             style={{ animationDelay: "0.8s" }}
@@ -358,7 +333,6 @@ const PostEventPage = () => {
             />
           </div>
 
-          {/* Description */}
           <div
             className="fade-in-up mt-4"
             style={{ animationDelay: "1s" }}
@@ -378,7 +352,6 @@ const PostEventPage = () => {
             ></textarea>
           </div>
 
-          {/* Banner Image */}
           <div
             className="fade-in-up mt-4"
             style={{ animationDelay: "1.2s" }}
@@ -448,7 +421,6 @@ const PostEventPage = () => {
             />
           </div>
 
-          {/* Submit Button */}
           <div
             className="d-flex justify-content-end gap-2 mt-4 fade-in-up"
             style={{ animationDelay: "1.4s" }}
