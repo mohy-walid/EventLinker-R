@@ -6,7 +6,7 @@ const PostEventPage = () => {
   const navigate = useNavigate();
   
   const mode = location.state?.mode || "create";
-  const editData = location.state?.data || null;
+  const editData = location.state?.data || null; 
   const initialType = location.state?.type || "event";
 
   const [postType, setPostType] = useState(initialType);
