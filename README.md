@@ -33,7 +33,7 @@ It also supports volunteering opportunities, posting new events, and contacting 
 ### Feature 1: Homepage
 
 #### Feature 1 Live Design Preview
-![Homepage Screenshot](./src/images/home.png)  
+![Homepage Screenshot](./src/assets/img/home.png)  
 *Fig 1.1 - Homepage showcasing featured events and navigation*
 
 ---
@@ -53,7 +53,7 @@ It also supports volunteering opportunities, posting new events, and contacting 
 ### Feature 2: Sign In Page
 
 #### Feature 2 Live Design Preview
-![Sign In Screenshot](./src/images/signin.png)  
+![Sign In Screenshot](./src/assets/img/signin.png)  
 *Fig 2.1 - User login page with secure authentication*
 
 ---
@@ -75,7 +75,7 @@ It also supports volunteering opportunities, posting new events, and contacting 
 ### Feature 3: Sign Up Page
 
 #### Feature 3 Live Design Preview
-![Sign Up Screenshot](./src/images/signup.png)  
+![Sign Up Screenshot](./src/assets/img/signup.png)  
 *Fig 3.1 - User registration form with role assignment*
 
 ---
@@ -99,7 +99,7 @@ It also supports volunteering opportunities, posting new events, and contacting 
 ### Feature 4: Events Page
 
 #### Feature 4 Live Design Preview
-![Events Screenshot](./src/images/events.png)  
+![Events Screenshot](./src/assets/img/events.png)  
 *Fig 4.1 - Events listing page with filters and categories*
 
 ---
@@ -122,7 +122,7 @@ It also supports volunteering opportunities, posting new events, and contacting 
 ### Feature 5: Volunteering Page
 
 #### Feature 5 Live Design Preview
-![Volunteering Screenshot](./src/images/volunteer.png)  
+![Volunteering Screenshot](./src/assets/img/volunteer.png)  
 *Fig 5.1 - Volunteering opportunities listing*
 
 ---
@@ -141,7 +141,7 @@ It also supports volunteering opportunities, posting new events, and contacting 
 ### Feature 6: Event Details
 
 #### Feature 6 Live Design Preview
-![Event Details Screenshot](./src/images/details.png)  
+![Event Details Screenshot](./src/assets/img/details.png)  
 *Fig 6.1 - Full event details page with description and registration options*
 
 ---
@@ -160,7 +160,7 @@ It also supports volunteering opportunities, posting new events, and contacting 
 ### Feature 7: Post Event
 
 #### Feature 7 Live Design Preview
-![Post Event Screenshot](./src/images/post.png)  
+![Post Event Screenshot](./src/assets/img/post.png)  
 *Fig 7.1 - Add new event post form*
 
 ---
@@ -179,7 +179,7 @@ It also supports volunteering opportunities, posting new events, and contacting 
 ### Feature 8: Contact Us
 
 #### Feature 8 Live Design Preview
-![Contact Us Screenshot](./src/images/contact.png)  
+![Contact Us Screenshot](./src/assets/img/contact.png)  
 *Fig 8.1 - Contact form for inquiries and support*
 
 ---
@@ -200,19 +200,19 @@ It also supports volunteering opportunities, posting new events, and contacting 
 #### Feature 9 Live Design Preview
 
 **User Profile:**
-![User Profile Screenshot](./src/images/userprofile.png)  
+![User Profile Screenshot](./src/assets/img/userprofile.png)  
 *Fig 9.1 - User profile with basic access and event tracking*
 
 **Organizer Profile:**
-![Organizer Profile Screenshot](./src/images/organizer.png)  
+![Organizer Profile Screenshot](./src/assets/img/organizer.png)  
 *Fig 9.2 - Organizer profile with event management capabilities*
 
 **Admin Profile:**
-![Admin Profile Screenshot](./src/images/adminprofile.png)  
+![Admin Profile Screenshot](./src/assets/img/adminprofile.png)  
 *Fig 9.3 - Admin profile with platform moderation tools*
 
 **Super Admin Profile:**
-![Super Admin Profile Screenshot](./src/images/superadmin.png)  
+![Super Admin Profile Screenshot](./src/assets/img/superadmin.png)  
 *Fig 9.4 - Super Admin profile with full system control*
 
 ---
