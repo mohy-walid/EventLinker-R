@@ -354,7 +354,6 @@ const domainRoleMap = {
   "organizer.com": "organizer",
   "admin.com": "admin",
   "superadmin.com": "superadmin",
-  // Any other domain defaults to "user"
 };
 ```
 
@@ -392,7 +391,7 @@ const domainRoleMap = {
   "organizer.com": "organizer",
   "admin.com": "admin",
   "superadmin.com": "superadmin",
-  "custom-domain.com": "organizer", // Add your custom domain here
+  "custom-domain.com": "organizer", 
 };
 ```
 
