@@ -23,23 +23,19 @@ function EventDetails() {
 
   const [status, setStatus] = useState("upcoming");
 
-  // دالة للحصول على مفتاح خاص بالمستخدم
   const getUserKey = (baseKey) => {
     const user = JSON.parse(localStorage.getItem("currentUser"));
     if (!user) return null;
     return `${baseKey}_${user.id}`;
   };
 
-  // ✅ تحديد نوع الصفحة (event أو volunteer)
   const isVolunteer = event?.org !== undefined;
 
   useEffect(() => {
     if (!event) return;
 
-    // ✅ استخراج التاريخ من tags للـ volunteers أو من date للـ events
     let eventDateString;
     if (isVolunteer) {
-      // البحث عن التاريخ في tags (مثل "October 26, 2024")
       eventDateString = event.tags.find(tag => tag.match(/\w+ \d+, \d{4}/));
     } else {
       eventDateString = event.date.split(" - ")[0] || event.date;
@@ -73,9 +69,7 @@ function EventDetails() {
     return () => clearInterval(timer);
   }, [event, isVolunteer]);
 
-  // ✅ عند الضغط على Register Now (للأحداث)
   const handleRegister = () => {
-    // التحقق من تسجيل الدخول
     const user = JSON.parse(localStorage.getItem("currentUser"));
     if (!user) {
       alert("Please login to register for events!");
@@ -83,7 +77,6 @@ function EventDetails() {
       return;
     }
 
-    // الحصول على المفتاح الخاص بالمستخدم
     const registeredKey = getUserKey("registeredEvents");
     const stored = JSON.parse(localStorage.getItem(registeredKey)) || [];
 
@@ -105,9 +98,7 @@ function EventDetails() {
     alert("Event registered successfully ✅");
   };
 
-  // ✅ عند الضغط على Apply (للتطوع)
   const handleApply = () => {
-    // التحقق من تسجيل الدخول
     const user = JSON.parse(localStorage.getItem("currentUser"));
     if (!user) {
       alert("Please login to apply for volunteer opportunities!");
@@ -115,7 +106,6 @@ function EventDetails() {
       return;
     }
 
-    // الحصول على المفتاح الخاص بالمستخدم
     const appliedKey = getUserKey("appliedVolunteers");
     const stored = JSON.parse(localStorage.getItem(appliedKey)) || [];
 
@@ -142,13 +132,12 @@ function EventDetails() {
     return <h2 className="text-center mt-5">No Event Selected</h2>;
   }
 
-  // ✅ استخراج التاريخ والموقع
   const displayDate = isVolunteer 
     ? event.tags.find(tag => tag.match(/\w+ \d+, \d{4}|Ongoing/)) || "Date TBD"
     : event.date;
   
   const displayLocation = isVolunteer
-    ? event.tags[event.tags.length - 1] // آخر tag غالبًا الموقع
+    ? event.tags[event.tags.length - 1] 
     : event.place;
 
   return (
@@ -187,7 +176,6 @@ function EventDetails() {
                   {displayLocation}
                 </p>
 
-                {/* ✅ عرض الـ tags للـ volunteers */}
                 {isVolunteer && (
                   <div className="d-flex flex-wrap mb-3">
                     {event.tags.map((tag, i) => (
