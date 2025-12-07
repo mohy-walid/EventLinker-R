@@ -102,10 +102,10 @@ function SignupLayout() {
           placeholder="Enter your password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-          minLength={6}
+          pattern="^(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*]).{8,}$"
         />
         <Form.Control.Feedback type="invalid">
-          Password must be at least 6 characters.
+          Password must be at least 8 characters and include one uppercase letter, one number, and one special character.
         </Form.Control.Feedback>
       </Form.Group>
 
