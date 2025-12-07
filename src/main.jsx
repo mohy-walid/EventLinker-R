@@ -14,6 +14,7 @@ import "./css/Profile.css";
 import "./css/Events.css";
 import "./css/Volunteer.css";
 import "./css/form.css";
+import "./css/contact.css"
 
 
 

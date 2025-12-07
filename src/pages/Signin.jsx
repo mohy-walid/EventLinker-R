@@ -1,10 +1,8 @@
-import ThreeBackground from "../components/ThreeBackground";
 import LogLayout from "../Layouts/Log";
 
 function LoginPage() {
   return (
     <>
-      <ThreeBackground />
       <div className="log">
         <div className="log-box">
           <div className="log-head">

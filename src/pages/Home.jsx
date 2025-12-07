@@ -1,6 +1,5 @@
 import { useNavigate } from "react-router-dom";
 import CheckLogin from "../utils/CheckLog";
-import ThreeBackground from "../components/ThreeBackground";
 import "../css/Home.css";
 import e1 from "../assets/img/1.png"
 import e2 from "../assets/img/2.png"
@@ -35,8 +34,6 @@ function HomePage() {
 
     return (
       <>
-        <ThreeBackground />
-
         {/* ---------- Hero Section ---------- */}
         <header className="text-center text-white">
           <div className="container d-flex flex-column justify-content-center align-items-center vh-100 pt-5">

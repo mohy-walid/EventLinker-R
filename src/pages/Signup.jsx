@@ -1,10 +1,8 @@
-import ThreeBackground from "../components/ThreeBackground";
 import SignupLayout from "../Layouts/SignupLay";
 
 function SignupPage() {
   return (
     <>
-      <ThreeBackground />
       <div className="sign">
         <div className="sign-box">
           <div className="sign-head">
