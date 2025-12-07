@@ -29,6 +29,13 @@ function LogLayout() {
     if (form.checkValidity() === false) {
       event.stopPropagation();
     } else {
+      const passwordRegex =
+  /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[-*#@!$%^&?]).{7,}$/;
+
+      if (!passwordRegex.test(password)) {
+      alert("Password must be more than 6 characters and include uppercase, lowercase, number, and at least one special character (-*#@)");
+      return;
+           }
       const users = JSON.parse(localStorage.getItem("users")) || [];
       const foundUser = users.find((user) => user.email === email);
 
