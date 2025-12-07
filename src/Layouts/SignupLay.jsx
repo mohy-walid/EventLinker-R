@@ -11,18 +11,15 @@ function SignupLayout() {
   const [confirmPassword, setConfirmPassword] = useState("");
   const navigate = useNavigate();
 
-  // Function to determine role based on email domain
+  const passwordRegex = /^(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*]).{8,}$/;
+
   const getRoleFromEmail = (email) => {
     const domain = email.split("@")[1]?.toLowerCase();
-    
-    // Map domains to roles
     const domainRoleMap = {
       "organizer.com": "organizer",
       "admin.com": "admin",
       "superadmin.com": "superadmin",
     };
-
-    // Return role based on domain, default to "user"
     return domainRoleMap[domain] || "user";
   };
 
@@ -34,8 +31,11 @@ function SignupLayout() {
 
     if (!form.checkValidity()) return;
 
+    if (!passwordRegex.test(password)) {
+      return;
+    }
+
     if (password !== confirmPassword) {
-      alert("Passwords do not match...");
       return;
     }
 
@@ -48,7 +48,6 @@ function SignupLayout() {
       return;
     }
 
-    // Determine role from email domain
     const userRole = getRoleFromEmail(email);
 
     const newUser = {
@@ -123,10 +122,10 @@ function SignupLayout() {
           placeholder="Enter your password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-          minLength={6}
+          isInvalid={validated && !passwordRegex.test(password)}
         />
         <Form.Control.Feedback type="invalid">
-          Password must be at least 6 characters.
+          Contains at least one uppercase letter (A–Z), one number (0–9), one special character (!@#$% etc) and is at least 8 characters long.
         </Form.Control.Feedback>
       </Form.Group>
 
