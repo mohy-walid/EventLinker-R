@@ -54,7 +54,7 @@ const ContactPage = () => {
         message: ''
       });
 
-      // Clear success message after 5 seconds
+      // remove success message after 5 seconds
       setTimeout(() => {
         setStatus('');
         setStatusMessage('');
